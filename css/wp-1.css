@@ -1,0 +1,113 @@
+.container {
+    overflow: hidden;
+}
+/* 繪圖設計 */
+.wp-design {
+    color: #FF98C9;
+}
+
+/* 文書處理 */
+.wp-document {
+    color: #BDAAFF;
+}
+
+/* 影音剪輯 */
+.wp-editing {
+    color: #47D5CE;
+}
+
+/* 電競遊戲 */
+.wp-gaming {
+    color: #43D3FD;
+}
+
+.wp-img {
+    width: 100%;
+    padding: 30px 15px;
+}
+.wp-index{
+    margin-top: 140px;
+}
+
+.wp-button-group {
+    margin: 20px 0;
+    border: 2px solid;
+    border-radius: 150px;
+    width: 300px;
+    background-color: #fff;
+}
+
+.wp-button {
+    width: 135px;
+    border-radius: 100px;
+    background-color: #fff;
+    padding: 8px ;
+    margin:4px;
+    border: none;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.wp-button:hover {
+    color: #fff;
+}
+
+.wp-button:focus {
+    outline: none;
+}
+
+.wp-gaming-button:hover {
+    background-color: #43D3FD;
+}
+
+.wp-gaming-button:focus {
+    background-color: #43D3FD;
+}
+
+.wp-editing-button:hover {
+    background-color: #47D5CE;
+}
+
+.wp-editing-button:focus {
+    background-color: #47D5CE;
+}
+
+.wp-document-button:hover {
+    background-color: #BDAAFF;
+}
+
+.wp-document-button:focus {
+    background-color: #BDAAFF;
+}
+
+.wp-design-button:hover {
+    background-color: #FF98C9;
+}
+
+.wp-design-button:focus {
+    background-color: #FF98C9;
+}
+
+.wp-bg {
+    font-size: 200px;
+    font-family: 'Freckle Face', cursive;
+    z-index: -1;
+}
+.wp-bg span{
+    text-transform: uppercase;
+    font-size: 200px;
+    opacity: 20%;
+    font-family: 'Freckle Face', cursive;
+    position: absolute;
+    top: 55%;
+    left: 5%;
+}
+
+.wp-bg img {
+    height: 70%;
+    transform: rotate(20deg);
+    position: absolute;
+    opacity: 10%;
+    top:20%;
+    right: 5%;
+}

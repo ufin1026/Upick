@@ -1,0 +1,126 @@
+* {
+    /* outline: 1px solid #000; */
+}
+
+body {
+    overflow-x: hidden;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px #01FFC3;
+}
+
+.carStepRow_ZY {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.carStepContainer_ZY{
+    width: 100%;
+    padding: 20px auto;
+}
+
+.carStepGroup_ZY {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carStepArrow_ZY {
+    position: relative;
+    color: #061127;
+}
+
+.carStepArrow_ZY::after {
+    position: absolute;
+    content: "➔";
+    font-size: 28px;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+    color: #061127;
+}
+
+.carStepCircle_ZY {
+    margin: 5px auto;
+    color: white;
+    background-color: #061127;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+}
+
+.carStepTitle_ZY {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px auto;
+    text-align: center;
+    color: #061127;
+}
+
+.carStepArrowNotFucus_ZY::after {
+    color: #D2D8E2;
+
+}
+
+.carStepCircleNotFucus_ZY {
+    background-color: #D2D8E2;
+}
+
+.carStepTitleNotFucus_ZY {
+    color: #D2D8E2;
+}
+
+/*此div撐開footer上方的留白空間*/
+.shpFooterSpace-CL {
+    height: 100px;
+    width: 1300px;
+}
+
+
+@media screen and (max-width:375px) {
+    .carStepContainer_ZY{
+        margin: 5px auto;
+    }
+    .carStepGroup_ZY{
+        width: 100%;
+    }
+    
+    .carStepArrow_ZY:after{
+        display: none;
+    }
+    .carStepArrow_ZY{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .carStepTitle_ZY{
+        font-size: 12px;
+    }
+
+
+
+    
+    .navbarAll {
+        display: none;
+    }
+    .carStepRow_ZY {
+        margin: 0 auto; 
+        padding-top: 0px;
+    }
+    .shpFooterSpace-CL {
+        display: none;
+    }
+    .shpFooterOut-CL {
+        display: none;
+    }
+    .colorspace {
+        display: none;
+    }
+
+}

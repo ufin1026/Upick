@@ -1,0 +1,349 @@
+/* * {
+            outline: 1px solid #CCC;
+        } */
+
+        body {
+            background-color: #F5F6F8;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .memberCen_HC {
+            padding-top: 150px;
+            display: flex;
+        }
+
+        /* 左側Menu */
+        .memLeftMenuTitle_HC>p {
+            color: #FFF;
+            font-size: 28px;
+            font-weight: 700;
+            display: block;
+            margin: 20px;
+        }
+
+        .memLeftMenu_HC {
+            width: 250px;
+            height: 700px;
+            background-color: #383E44;
+            border-radius: 0 8px 8px 0;
+            margin-right: 20px;
+        }
+
+        .memLeftMenu_HC>ul>li>a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            height: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            padding-left: 40px;
+            line-height: 50px;
+            transition: .4s;
+        }
+
+        .memLeftMenu_HC>ul>li>a:hover {
+            background-color: #7FE0DC;
+            color: #383E44;
+        }
+
+        .memLeftMenu_HC>ul>li>a.memChange_HC {
+            background-color: #7FE0DC;
+            color: #383E44;
+        }
+
+        /* 右邊區域 */
+        .memRightCon {
+            width: 930px;
+        }
+
+        /* 標題樣式 */
+        .memberTitle_HC {
+            width: 165px;
+            height: 40px;
+            display: flex;
+            border-bottom: 2px solid #383E44;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .memberTitleText_HC {
+            margin-right: 10px;
+        }
+
+        .memSquareBox_HC {
+            display: flex;
+            position: absolute;
+            left: 150px;
+        }
+
+        .memSquare01_HC {
+            width: 5px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+            margin-right: 5px;
+        }
+
+        .memSquare02_HC {
+            width: 10px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+        }
+
+        /* 表格樣式 */
+        table {
+            border-bottom: 2px solid #383E44;
+        }
+
+        #memWebTable_HC>thead>tr>th.memProductTh_HC {
+            width: 540px;
+        }
+
+        #memWebTable_HC>thead>tr>th.memTrashTh_HC {
+            width: 60px;
+        }
+
+        th:first-child {
+            border-top-left-radius: 4px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 4px;
+        }
+
+        #memWebTable_HC>thead>tr>th {
+            width: 110px;
+            height: 40px;
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 40px;
+            background-color: #383E44;
+            text-align: center;
+        }
+
+        #memWebTable_HC>tbody>tr {
+            height: 110px;
+            border-bottom: 1px solid #E4E8EE;
+            background-color: #FFF;
+        }
+
+        #memWebTable_HC>tbody>tr:hover {
+            background-color: #F5F6F8;
+        }
+
+        #memWebTable_HC>tbody>tr>td {
+            text-align: center;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        #memWebTable_HC>tbody>tr>td.memProductTd_HC {
+            text-align: left;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+
+        #memWebTable_HC>tbody>tr>td>p {
+            line-height: normal;
+            color: #383E44;
+        }
+
+        #memWebTable_HC>tbody>tr>td>a {
+            color: #383E44;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        #memWebTable_HC>tbody>tr>td>a:hover {
+            color: #4AC8C2;
+        }
+
+        #memWebTable_HC>tbody>tr>td>a>i {
+            font-size: 16px;
+        }
+
+        .memProductTd_HC {
+            height: 110px;
+            display: flex;
+            align-items: center;
+        }
+
+        #memWebTable_HC>tbody>tr>td>img {
+            width: 90px;
+            margin-right: 10px;
+        }
+
+        /* 分頁樣式 */
+        .memPagenation_HC {
+            width: 280px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        /* 空清單狀態樣式 */
+        /* .memFollow_HC {
+            display: none;
+        } */
+
+        #memWebTable_HC>tbody>tr#memNoFollow_HC {
+            height: 500px;
+            background-color: #E4E8EE;
+            display: none;
+        }
+
+        #memWebTable_HC>tbody>tr#memNoFollow_HC>td>h3 {
+            line-height: 500px;
+        }
+
+        /* TOP按鈕樣式 */
+        .memTop_HC {
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-color: #383E44;
+            color: #FFF;
+            border-radius: 50px 50px 0 50px;
+            line-height: 60px;
+            text-align: center;
+            text-decoration: none;
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            position: fixed;
+        }
+
+        .memTop_HC:hover {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .memMobileFollowArea_HC {
+            display: none;
+        }
+
+        /*此div撐開footer上方的留白空間*/
+        .shpFooterSpace-CL {
+            height: 100px;
+            width: 1300px;
+        }
+
+
+        /* 手機用回會員中心紐 */
+        .memBackBtn_HC {
+            display: none;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container {
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 左側Menu */
+            .memLeftMenu_HC {
+                display: none;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC {
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .memberTitle_HC {
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                left: 0;
+                position: fixed;
+            }
+
+            .memberTitle_HC>h1 {
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC {
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC {
+                display: none;
+            }
+
+            /* 隱藏網頁追蹤清單 */
+            .memWebFollowArea_HC {
+                display: none;
+            }
+
+            /* 追蹤清單樣式 */
+            .memMobileFollowArea_HC {
+                display: block;
+                padding-top: 60px;
+            }
+
+            .memMbFollowCardArea_HC {
+                display: flex;
+                background-color: #FFF;
+                padding: 10px;
+                border-radius: 4px;
+                box-shadow: 3px 3px 10px #E4E8EE;
+                align-items: center;
+            }
+
+            .memMbFollowCardArea_HC>img {
+                width: 90px;
+                height: 90px;
+                margin-right: 10px;
+            }
+
+            .memMbFollowCardCon_HC>a {
+                height: 60px;
+                font-size: 13px;
+                color: #383E44;
+                text-decoration: underline;
+            }
+
+            .memMbFollowCardDown_HC {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .memMbFollowCardDown_HC>a {
+                color: #383E44;
+            }
+
+            /* TOP按鈕樣式 */
+            .memTop_HC {
+                right: 20px;
+                bottom: 20px;
+                background-color: #383e44ad;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            /* 手機用回會員中心紐 */
+            .memBackBtn_HC {
+                display: block;
+                position: absolute;
+                left: 10px;
+            }
+
+            .memBackBtn_HC>a>i {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+                color: #FFF;
+            }
+        }

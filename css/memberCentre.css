@@ -1,0 +1,155 @@
+/* * {
+            outline: 1px solid #CCC;
+        } */
+
+        body {
+            background-color: #F5F6F8;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .memberCen_HC {
+            padding-top: 200px;
+        }
+
+        /* 標題樣式 */
+        .memberTitle_HC {
+            width: 165px;
+            height: 40px;
+            display: flex;
+            border-bottom: 2px solid #383E44;
+            position: relative;
+        }
+
+        .memberTitleText_HC {
+            margin-right: 10px;
+        }
+
+        .memSquareBox_HC {
+            display: flex;
+            position: absolute;
+            left: 150px;
+        }
+
+        .memSquare01_HC {
+            width: 5px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+            margin-right: 5px;
+        }
+
+        .memSquare02_HC {
+            width: 10px;
+            height: 40px;
+            background-color: #383E44;
+            transform: skewX(-15deg);
+        }
+
+        /* 會員中心功能入口按鈕 */
+        .memberCardGroup_HC {
+            width: 650px;
+            margin: 0 auto;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .memberCard_HC {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .memberCard_HC>a {
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .memberCard_HC>a>i {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #7FE0DC;
+            font-size: 60px;
+            text-align: center;
+            color: #fff;
+            line-height: 150px !important;
+            transition: .4s;
+        }
+
+        .memberCard_HC>a>h3 {
+            transition: .4s;
+        }
+
+        .memberCard_HC:hover>a>h3 {
+            color: #4AC8C2;
+        }
+
+        .memberCard_HC:hover>a>i {
+            background-color: #4AC8C2;
+        }
+
+        /* 手機板 */
+        @media screen and (max-width: 375px) {
+            .container {
+                width: 355px;
+                margin: 0 auto;
+            }
+
+            /* 會員中心title */
+            .memberCen_HC {
+                width: 355px;
+                margin-top: 50px;
+                position: relative;
+
+            }
+
+            .memberTitle_HC {
+                width: 375px;
+                background-color: #383E44;
+                border-bottom: none;
+                position: fixed;
+                left: 0;
+            }
+
+            .memberTitle_HC>h1 {
+                font-size: 22px;
+            }
+
+            .memberTitleText_HC {
+                text-align: center;
+                margin: 0 auto;
+                color: #FFF;
+            }
+
+            .memSquareBox_HC {
+                display: none;
+            }
+
+            /* 會員中心功能入口按鈕 */
+            .memberCardGroup_HC {
+                width: 270px;
+                margin: 0 auto;
+                padding-top: 60px;
+            }
+
+            .memberCard_HC {
+                width: 120px;
+                margin-bottom: 10px;
+            }
+
+            .memberCard_HC>a>i {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+                line-height: 120px !important;
+            }
+
+            .memberCard_HC>a>h3 {
+                font-size: 18px;
+            }
+        }

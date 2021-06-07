@@ -1,0 +1,39 @@
+.price {
+    color: #FD723C;
+    font-weight: bold;
+}
+
+/* 繪圖設計 */
+.wp-design {
+    color: #FF98C9;
+}
+.wp-design-bg {
+    background-color:#FF98C9;
+}
+
+
+/* 文書處理 */
+.wp-document {
+    color: #BDAAFF;
+}
+.wp-document-bg {
+    background-color: #BDAAFF;
+}
+
+/* 影音剪輯 */
+.wp-editing {
+    color: #47D5CE;
+}
+.wp-editing-bg {
+    background-color: #47D5CE;
+}
+
+/* 電競遊戲 */
+.wp-gaming {
+    color: #43D3FD;
+}
+.wp-gaming-bg {
+    background-color: #43D3FD;
+}
+
+/* Upick */

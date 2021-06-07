@@ -1,0 +1,141 @@
+    .navbarAll {
+    position: fixed;
+    z-index: 999;
+
+    }    
+    
+    .navbar {
+        width: 100vw;
+    }
+    
+    .upick-navbar-container {
+        width: 1300px;
+        margin: auto auto;
+    }
+
+    .navbar-toggler-upick {
+        border: none;
+    }
+
+    .up-nav-left {
+        padding: 0 15px;
+    }
+
+    .up-nav-right {
+        padding: 0 10px;
+    }
+
+    .navbar-toggler-upick i {
+        color: #fff;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .navbar-upick {
+        background-color: #383E44;
+        font-size: 14px;
+        height: 72px;
+    }
+
+    .wBtnNav {
+        background-color: transparent;
+        color: #fff;
+        cursor: pointer;
+        border: 2px solid #7FE0DC;
+        outline: none;
+        margin: auto 0;
+        width: 110px;
+        height: 40px;
+        border-radius: 55px;
+        transition: .5s;
+    }
+
+    .wBtnNav:hover {
+        background-color: #7FE0DC;
+        color: #383E44;
+    }
+
+    .upick-navbar-container a {
+        color: #fff;
+    }
+
+    .upick-navbar-container a:hover {
+        color: #7FE0DC;
+        transition: .5s;
+    }
+
+    /* 彩虹條 */
+    .colorspace {
+        height: 8px;
+        width: 100vw;
+        background: linear-gradient(to right, #7FE0DC 1%, #FF8888 50%, #7FE0DC 99%);        
+    }
+
+
+
+
+    /*navbar下白色搜尋區*/
+    .navSearch-CL {
+        width: 100vw;
+        height: 120px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        padding-top: 10px;
+        border-bottom: 1px solid #b9b9b9;
+
+        transform: translateY(-30vh);
+        opacity: 0;
+    }
+
+    /*將搜尋輸入框置中*/
+    .wSearchInput {
+        margin: 0 auto;
+    }
+
+    /*修改搜尋分類區的寬度置中*/
+    .navSearchClass-CL {
+        display: flex;
+        width: 1200px;
+        margin: 15px auto 0 auto;
+        justify-content:space-between;        
+    }
+
+    /*修改搜尋分類區總大小等設定*/
+    .navSearchText-CL {
+        width: 100px;
+        height: 30px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    /*搜尋分類區文字設定*/
+    .navSearchText-CL span {
+        width: 100px;
+        display: block;
+        position: absolute;
+        text-align:center;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 30px;
+        color: rgb(102, 102, 102);
+    }
+
+    /*搜尋分類區按鈕特效顏色設定*/
+    .navSearchColor-CL {
+        width: 0%;
+        height: 30px;
+        background-color: #7FE0DC;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.2;
+        transition: 1s;
+        transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
+
+

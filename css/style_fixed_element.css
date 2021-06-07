@@ -1,0 +1,137 @@
+
+/*對話區*/
+.umaConvert-CL {
+    width: 250px;
+    height: 300px;
+    position: fixed;
+    background: rgb(200, 200, 200);
+    z-index: 998;
+    top: 82%;
+    left: 4%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/*UMA對話區內部div間距大小設定*/
+.umaQ-CL{
+    width: 90%;
+    height: 26%;
+    margin: 5%;
+    background: rgb(255, 255, 186);
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 6px rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 900;
+    color: rgb(151, 36, 36);
+    position: relative;
+}
+
+/*UMA回答*/
+.umaAnser-CL {
+    display: none;
+    color: rgb(77, 77, 77);
+}
+
+/*UMA小幫手*/
+.umaHelper-CL {
+    width: 290px;
+    height: 450px;
+    background: #ffffff;
+    position: fixed;
+    z-index: 999;
+    top: 78%;
+    left: 3%;
+}
+
+/*UMA圓形區*/
+.umaCircle-CL {
+    width: 120px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    cursor: pointer;
+}
+
+/*UMA圓底*/
+.umaCircleBG-CL {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #383E44;
+    background: #ffffff;
+    background-position: 25px 20px;
+    background-size: 100px;
+    overflow: hidden;
+}
+
+/*UMA圓門*/
+.umaCircleDoor-CL {
+    position: absolute;
+    width: 30px;
+    height: 120px;
+    border-radius: 50%; 
+    transform-origin: top left;
+    background: url('2x/logo_w_01.png') center center no-repeat #FD723C;
+    background-size: 20px 60px;
+}
+
+.umaDoorAnima-CL {
+    animation-name: umaopen;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+@keyframes umaopen {
+    0% {
+        width: 120px;
+        background-size: 60px 60px;
+    }
+    25% {
+        width: 120px;
+        background-size: 60px 60px;
+    }
+    26% {
+        width: 30px;
+        background-size: 20px 60px;
+    }
+    50% {
+        width: 30px;
+        background-size: 20px 60px;
+    }
+    51% {
+        width: 120px;
+        background-size: 60px 60px;
+    }
+    75% {
+        width: 120px;
+        background-size: 60px 60px;
+    }
+    76% {
+        width: 30px;
+        background-size: 20px 60px;
+    }
+    99% {
+        width: 30px;
+        background-size: 20px 60px;
+    }
+    100% {
+        width: 120px;
+        background-size: 60px 60px;
+    }
+}
+
+
+.umaHelper-CL span {
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+

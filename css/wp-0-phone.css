@@ -1,0 +1,114 @@
+.wp-title {
+    color: #FF2181;
+    letter-spacing: 20px;
+}
+
+/* 繪圖設計 */
+.wp-design {
+    color: #FF98C9;
+}
+
+/* 文書處理 */
+.wp-document {
+    color: #BDAAFF;
+}
+
+/* 影音剪輯 */
+.wp-editing {
+    color: #47D5CE;
+}
+
+/* 電競遊戲 */
+.wp-gaming {
+    color: #43D3FD;
+}
+
+.wp-0-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 120px;
+}
+
+.wp-img {
+    width: 30%;
+    padding: 30px 15px;
+}
+
+.wp-originStyle {
+    border-radius: 100px;
+    width: 400px;
+    height: 100px;
+    padding: 0 10px;
+    margin: 15px 10px;
+    display: flex;
+   align-items: center;
+   /* justify-content: space-around; */
+}
+
+.wp-design-hover:hover {
+    background-color: #ff98c930;
+    border-radius: 150px;
+     width: 400px;
+    height: 100px;
+    transition: .8s;
+}
+
+.wp-document-hover:hover {
+    background-color: #BDAAFF30;
+    border-radius: 150px;
+     width: 400px;
+    height: 100px;
+    transition: .5s;
+}
+
+.wp-editing-hover:hover {
+    background-color: #47D5CE30;
+    border-radius: 150px;
+     width: 400px;
+    height: 100px;
+    transition: .5s;
+}
+
+
+.wp-gaming-hover:hover {
+    background-color: #43D3FD30;
+    border-radius: 150px;
+     width: 400px;
+    height: 100px;
+    transition: .5s;
+}
+
+.wp-originStyle h2{
+padding-left: 30px;
+}
+
+.wp-design-hover {
+    background-color: #ff98c930;
+}
+
+.wp-document-hover {
+    background-color: #BDAAFF30; 
+}
+
+.wp-editing-hover{
+    background-color: #47D5CE30;
+   
+}
+
+.wp-gaming-hover {
+    background-color: #43D3FD30;
+   
+}
+
+.wp-design-info{
+    display: none;
+}
+.wp-document-info{
+    display: none;
+}
+.wp-editing-info{
+    display: none;
+}
+.wp-gaming-info{
+    display: none;
+}

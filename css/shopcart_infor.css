@@ -1,0 +1,892 @@
+* {
+    /* outline: 1px solid #000; */
+}
+.row,
+p,
+h1,h2,h3,h4,h5,
+label,ul
+{
+    margin: 0;
+}
+
+.boxhideZY{
+    display: none;
+}
+
+.invoicehideZY{
+    display: none;
+}
+.invoiceinforhideZY{
+    display: none;
+}
+
+
+.carCreditbox{}
+.carMobileBox{}
+.carPersonalBox{}
+.carCompanyBox{}
+.carmobilenum{}
+.DigitalCertificatenum{}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px #01FFC3;
+}
+
+.container { 
+    max-width: 1200px;
+    padding: 0;
+}
+
+.cartTitleRow_ZY {
+    margin: 20px auto 0 auto;
+    padding: 0;
+    width: 100%;
+    background-color: #383e44;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.carheaderItem_ZY {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px auto;
+    text-align: center;
+    letter-spacing: 10px;
+    text-indent: 10px;
+
+}
+
+.cartItemRow_ZY {
+    width: 100%;
+    /* height: 15vh; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: wheat; */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.carItem_ZY {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px auto;
+    padding: 0 10px;
+
+}
+
+.carItemName_ZY {
+    display: flex;
+    height: 80px;
+
+}
+.carItemImg_ZY{
+    width: 10%;
+}
+
+.carItemImg_ZY img {
+    width: 100%;
+    height: 100%;
+}
+
+.carItemWord_ZY {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: justify;
+
+}
+
+.carItemPrice_ZY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carItemQuantityOut_Zy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.carInforItemQuantity_Zy p{
+margin: 0 auto;
+font-size: 18px;
+font-weight: bold;
+}
+
+.carItemQuantitySelect_ZY {
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-left: 30%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.carItemTotlePrice_ZY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.carItemBtn_ZY {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carItemBtn_ZY button {
+    width: 120px;
+
+    margin: 5px auto;
+    padding: 2px 0;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    background-color: #383e44;
+    letter-spacing: 1px;
+}
+
+.carBorderBottom_ZY {
+    margin: 0 auto;
+    width: 95%;
+    height: 2px;
+    background-color: #d0d6df;
+    border-radius: 10px;
+}
+
+.carFooterInfor_ZY {
+    width: 100%;
+    background-color: #383e44;
+    margin: 0 auto;
+    border-radius: 0 0 8px 8px;
+}
+
+.carTotalQuti_ZY {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.carTotalQuti_ZY p {
+    margin: 0 10px;
+}
+
+.carTotalQuti_ZY span {
+    color: #fd723c;
+}
+
+.carTotalPrice_ZY {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.carTotalPrice_ZY p {
+    text-align: center;
+    margin: 0 15px 0 auto;
+    color: white;
+}
+
+.carTotalPrice_ZY span {
+    color: #fd723c;
+
+}
+
+.carCheckout_ZY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carCheckout_ZY button {
+    width: 120px;
+    margin: 10px auto;
+    padding: 2px auto;
+    border-radius: 30px;
+    border: none;
+    background-color: #ff8888;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.carRecommendTitle_ZY{
+margin: 10px auto 5px;
+}
+
+.carRecommendTitle_ZY p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px;
+    font-size: 22px;
+    font-weight:bold;
+    color: #383e44;
+}
+
+.carRecommendBox_ZY {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.carRecommend_ZY {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.carRecommendItem_ZY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 5px;
+
+}
+
+.carRecommendImg_ZY {
+    width: 40%;
+    margin: 0px auto;
+    padding: 0 5px 0 0;
+
+}
+
+.carRecommendImg_ZY img {
+    width: 100%;
+}
+
+.carRecommendInfor_ZY {
+    width: 60%;
+
+}
+
+.carRecommendInfor_ZY p {
+    font-size: 14px;
+    font-weight: bold;
+    /* vertical-align: middle; */
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+.carRecommendBtn_ZY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carRecommendCatBtn_ZY {
+    background-color: white;
+    border: none;
+    font-size: 18px;
+    margin: 0 auto;
+    padding: 0 auto;
+
+}
+
+.carRecommendBtn_ZY p {
+    margin: 0 auto;
+    flex-grow: 0.8;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff2981;
+    text-align: center;
+}
+
+.carGoToShopRow_ZY{
+    display: flex;
+    margin: 20px 0 ;
+    flex-direction: row-reverse;
+}
+
+.carGoToShopBtn_ZY{
+    width: 130px;
+    background-color: #ff8888;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    letter-spacing: 2px;
+    text-indent: 2px;
+}
+
+.carNoticeSection_ZY{
+    margin: 20px auto;
+    border: 2px solid #383E44;
+    border-radius: 8px 8px 0 0 ;
+}   
+
+.carNoticeTitle_ZY{
+    margin: 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4e8ee;
+    border-radius: 8px 8px 0 0 ;
+}
+.carNoticeTitle_ZY p {
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    
+}
+
+.carNoticeInfor_ZY{
+    margin: 10px auto;
+    list-style-type: decimal;
+}
+
+.carNoticeInfor_ZY ul{
+    list-style-type: decimal;
+}
+.carNoticeInfor_ZY li{
+    margin: 5px auto;
+}
+
+.carInforcontainer_ZY{
+    width: 100%;
+    margin: 30px auto;
+}
+
+.carInforPaycontainer_ZY{
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+}
+
+.carInforInvoicecontainer_ZY{
+    width: 100%;
+    display: block;
+}
+
+.carInforTitle_ZY{
+width: 100%;
+background-color: #383e44;
+border-radius: 8px 8px 0 0 ;
+display: flex;
+}
+
+.carInforTitle_ZY h5{
+margin: 5px auto;
+
+color: white;
+font-weight: bold;
+
+}
+
+.carOrdererCheckbox_ZY{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* checkbar */
+input[type="checkbox"]{
+ appearance: none;
+ -webkit-appearance:none;
+ width: 20px;
+ height: 20px;
+border-radius: 4px;
+border:2px solid #383e44;;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 8px;
+}
+
+label[for="sameMember"]{
+cursor: pointer;
+}
+label[for="sameMember"] p{
+    font-size: 14px;
+    margin:0 5px ;
+}
+
+input[type="checkbox"]:after{
+font-family:"Font Awesome 5 Pro";
+font-weight: 900;
+color: white;
+content:"\f00c" ;
+font-size: 14px;
+display: none;
+}
+
+input[type="checkbox"]:hover{
+    
+    transition: .2s;
+    background-color: #bec1c4;
+}
+input[type="checkbox"]:checked{
+    background-color:#383e44;
+}
+input[type="checkbox"]:checked::after{
+    display: block;
+}
+/* checkbar */
+
+
+.carOrdererInfor_ZY{
+    margin: 20px 0;
+    
+}
+
+
+.carOrdererInfor_ZY h4{
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+.carOrdererName_ZY table{
+    width: 100%;
+    background-color: #383e442a;
+    color: #7e7e7e;
+    
+}
+
+.carOrdererName_ZY th{
+    width: 100px;
+    padding: 5px 0 5px 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carOrdererName_ZY td{
+    padding: 5px 10px 5px 0;
+}
+
+
+
+.carInputContainer_ZY{
+margin: 0 auto 20px;
+}
+
+.carInputContainer_ZY p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+.carInputContainer_ZY[data-error]::after{
+    content:"\f06a" "\00a0"attr(data-error);
+    font-family:"Font Awesome 5 Pro";
+    font-size: 16px;
+    font-weight: 900;
+    color:#FF8888 ;
+    display: block;
+    margin: 5px 0 0 0;
+}
+
+
+.has-error{
+       font-size: 16px;
+       font-weight: 900;
+       color:#FF8888 ;
+       border-color:#FF8888;
+}
+
+.carInputContainer_ZY input{
+    width: 100%;
+    height: 3rem;
+    padding-left:10px;
+    border: 2px solid ;
+    border-color: #383e44;
+    border-radius: 4px;
+}
+.carInforPayGroup_ZY{
+    display: flex;
+    
+}
+
+.carInforPayRadioBox_ZY{
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.carInforPayRadioBox_ZY input{
+margin-right: 10px;
+}
+
+.carInforInputBox_ZY{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.carInforInputBox_ZY div{
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.CarNumber_ZY{
+    width: 20%;
+    border:2px solid #383e44;
+    border-radius: 4px;
+    padding:5px 5px;
+    font-size: 14px;
+
+}
+
+
+.carInforCreditCardNumberBox_ZY{
+    display: flex;
+}
+
+.carInforInputNumber_ZY {
+    width: 5%;
+    margin: 0 10px;
+}
+
+.carInforInputNumber_ZY div{
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.carInforInputNumber_ZY input{
+width: 100%;
+text-align: center;
+}
+
+.CarCsvNumber_ZY{
+    width: 20%;
+    border:2px solid #383e44;
+    border-radius: 4px;
+    padding:3px 3px;
+    font-size: 14px;
+}
+
+.carInforInputDate_ZY{
+    width: 15%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.carInforMobileText_ZY{
+    margin: 10px;
+
+    font-weight: bold;
+    font-size: 16px;
+    color: #f48f89;
+}
+
+.carInforInputDateBoxOut_ZY{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.carInforInputDateBox_ZY{
+    width: 60px;
+    height: 30px;
+    border: 2px solid #383e44 ;
+    border-radius: 4px;
+
+    position: relative;
+}
+.carInforInputDateBox_ZY::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 8px;
+    top: 30%;
+    right: 10%;
+    background: url(../icon/upickdownbar.png) no-repeat center;
+    pointer-events: none;
+}
+
+.carInforInputDateSelect_ZY{
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-left: 30%;
+    font-size: 16px;
+
+}
+
+.carInforInputDateSelect_ZY option{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.carInvoiceBox_ZY{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px auto;
+    font-size: 16px;
+    font-weight: bold;
+
+    
+}
+.carInvoicebtn_ZY{
+    margin: 10px;
+}
+
+.carInvoicebtn_ZY input{
+    margin-right: 10px;
+}
+
+
+.carInvoiceInforBox_ZY{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: bold;
+}
+.carInvoiceInforItem_ZY{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    height: 32px;
+
+
+}
+
+
+.carInvoiceInforItem_ZY input{
+    margin-right: 10px;
+}
+
+.carInvoiceInforItem_ZY input[type="tel"]{
+    border: 2px solid  #383e44;
+    border-radius: 4px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.carInvoiceInforCompanyItem_ZY{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    height: 32px;
+
+}
+
+.carInvoiceInforCompanyItem_ZY input{
+    margin-left: 10px;
+    border: 1px solid #383e44 ;
+    border-radius: 4px;
+}
+
+.carInforRemark_ZY{
+    width: 100%;
+    display: block;
+}
+.carInforRemark_ZY input{
+    border:2px solid #383E44;
+    border-radius: 4px;
+    padding: 10px 5px;
+}
+
+.carInforRemarkBox_ZY{
+    display: flex;
+    flex-wrap: nwrap;
+    margin: 10px;
+}
+.carInforRemarkTitle_ZY{
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+.carInforRemark_ZY{
+    margin: 10px auto;
+    width: 100%;
+    
+}
+.carInforRemark_ZY input{
+    width: 100%;
+}
+
+.carSubmitBtnBox_ZY{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carSubmitBtn_ZY{
+    background-color: #383E44;
+    color: white;
+    border: none;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.carInforRemarkTitle_ZY span{
+    color: #f48f89;
+}
+@media screen and (max-width:375px){
+    button:focus {
+        outline: none;
+        box-shadow:none;
+        color: turquoise;
+    }
+    .carInforcontainer_ZY{
+        margin: 10px auto;
+    }
+    .container{
+        max-width: 375px;
+    }
+    .carheaderItem_ZY
+    {
+        display: none;
+    }
+    .carOrdererName_ZY{
+        font-size: 14px;
+        font-weight: 100;
+        padding: 5px 0 5px ;
+    }
+    .carOrdererName_ZY th{
+        width: 60px;
+        font-size: 14px;
+        font-weight: 100;
+    }
+
+    .carContainerM_ZY{
+        display: none;
+    }
+    .carOrdererInforBox p{
+        font-size: 14px;
+    }
+    .carInputContainer_ZY{
+        margin: 0;
+    }
+    .form-group{
+        margin-bottom: 5px;
+    }
+
+    .CarNumber_ZY{
+        width: 50%;
+        text-align: center;
+    }
+    .carInforCreditCardNumberBox_ZY{
+        width: 100%;
+    }
+    .carInforInputNumber_ZY{
+        width: 20%;
+    }
+    .carInforInputDate_ZY{
+        width: 32%;
+    }
+    .carInforInvoicecontainer_ZY{
+        margin: 20px auto;
+    }
+
+    .carFixedInforM_ZY{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+
+        margin: 0  ;
+        padding:0 ;
+        bottom: 0px;
+        left: 0;
+        background-color: #383E44;
+        color: white;
+    }
+    
+    
+    .carFixedInforFontM_ZY{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
+
+    .carFixedInforFontM_ZY p{
+        width: 110px;
+        margin: 3px 10px;
+        font-size: 12px;
+        
+    }
+
+    .carFixedInforFontM_ZY p:nth-child(2) span{
+        font-size: 20px;
+        
+        color: #ff8888;
+    }
+
+    .carFixedInforFontBtnBoxM_ZY button{
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 5px;
+    }
+
+    .carFixedButtonM1_ZY{
+        /* background-color: #FD723C;
+        color: white; */
+        background-color: white;
+        color: #ff8888;
+    }
+    
+    .carFixedButtonM2_ZY{
+        background-color: #ff8888;
+        color: white;
+    }
+    
+    .carSubmitBtn_ZY{
+        display: none;
+    }
+    .carInforRemarkBox_ZY{
+        margin-bottom: 50px;
+    }
+
+}

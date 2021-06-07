@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS STYLE</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+
+
+<body>
+    <div class="container">
+        <p>命名規則--<br>
+            所有Class name命名方式皆採取小駝峰命名法<br>
+            自定義的class名稱最後請加上-(名字英文縮寫)
+            例如: aniWinClose-CL<br>
+            各組員名字縮寫如下:<br>
+            筱晴:-HC<br>
+            姿蘭:-JL<br>
+            宗諺:-ZY<br>
+            逸名:-YM<br>
+            琪玲:-CL<br>
+            <br>
+            各頁面自定義class前綴名稱定義如下,<br>
+            例如: aniBlack-CL<br>
+            首頁動畫前綴:ani<br>
+            首頁前綴:main<br>
+            商城首頁前綴:shp<br>
+            單項商品首頁前綴:subShp<br>
+            商品細節頁前綴:dtl<br>
+            UPICK前綴:up<br>
+            WEPICK前綴:wp<br>
+            購物車前綴:car<br>
+            會員中心前綴:mem<br>
+            <br>
+
+            通用元件使用方式: 請將css與js資料夾內的檔案複製到自己的大專檔案夾內,並修改好路徑,撰寫網頁時將下列HTML的語法直接拷貝貼上,即可使用. 自己額外做的class請與通用元件的css與js檔案分開,
+            不要擺在同一個檔案內, 以利後續的整合辨識.<br>
+        </p>
+        <br>
+
+        <h3>一、WEB版淺色網頁用</h3>
+        <h4>1. wBtnNormalDark
+        </h4>
+        <button class="wBtnNormalDark btnShare">BUTTON</button>
+        <br>
+        &ltbutton class="wBtnNormalDark btnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>2. wBtnNormalWhite
+        </h4>
+        <button class="wBtnNormalWhite btnShare">BUTTON</button>
+        <br>
+        &ltbutton class="wBtnNormalWhite btnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>3. wBtnLock 按鈕鎖定時
+        </h4>
+        <button class="wBtnLock btnShare">BUTTON</button>
+        <br>
+        &ltbutton class="wBtnLock btnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>4. wBtnAddCar
+        </h4>
+        <button class="wBtnAddCar btnShare"><i class="fas fa-shopping-cart"></i> 加入購物車</button>
+        <br>
+        &ltbutton class="wBtnAddCar btnShare"&gt&lti class="fas fa-shopping-cart"&gt&lt/i&gt 加入購物車&lt/button&gt
+
+        <h4>5. wBtnAddTrace
+        </h4>
+        <button class="wBtnAddTrace btnShare"><i class="far fa-heart shpHeart"></i> 加入追蹤清單</button>
+        <br>
+        &ltbutton class="wBtnAddTrace btnShare"&gt加入追蹤清單&lt/button&gt;
+
+        <h3>二、WEB版深色網頁用</h3>
+        <h4>1. wBtnNGr
+        </h4>
+        <button class="wBtnNGr btnShare">BUTTON</button>
+        <br>
+        &ltbutton class="wBtnNGr btnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>2. wBtnNGRLoin
+        </h4>
+        <button class="wBtnNGRLoin btnShare">登入</button>
+        <br>
+        &ltbutton class="wBtnNGRLoin btnShare"&gt登入&lt/button&gt;
+
+        <h4>3. wBtnNGRadCar
+        </h4>
+        <button class="wBtnNGRadCar btnShare"><i class="fas fa-shopping-cart"></i> 加入購物車</button>
+        <br>
+        &ltbutton class="wBtnNGRadCar btnShare"&gt&lti class="fas fa-shopping-cart"&gt&lt/i&gt 加入購物車&lt/button&gt
+
+        <h4>4. wBtnNPk
+        </h4>
+        <button class="wBtnNPk btnShare">BUTTON</button>
+        <br>
+        &ltbutton class="wBtnNPk btnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>5. wBtnNPkAdCar
+        </h4>
+        <button class="wBtnNPkAdCar btnShare"><i class="fas fa-shopping-cart"></i> 加入購物車</button>
+        <br>
+        &ltbutton class="wBtnNPkAdCar btnShare"&gt&lti class="fas fa-shopping-cart"&gt&lt/i&gt 加入購物車&lt/button&gt
+
+        <h3>三、手機版淺色網頁用</h3>
+        <h4>1. mBtnDark
+        </h4>
+        <button class="mBtnDark mbtnShare">BUTTON</button>
+        <br>
+        &ltbutton class="mBtnDark mbtnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>2. mBtnWhite
+        </h4>
+        <button class="mBtnWhite mbtnShare">BUTTON</button>
+        <br>
+        &ltbutton class="mBtnWhite mbtnShare"&gtBUTTON&lt/button&gt;
+
+        <h3>四、手機版深色網頁用</h3>
+        <h4>1. mBtnGr
+        </h4>
+        <button class="mBtnGr mbtnShare">BUTTON</button>
+        <br>
+        &ltbutton class="mBtnGr mbtnShare"&gtBUTTON&lt/button&gt;
+
+        <h4>2. mBtnPk
+        </h4>
+        <button class="mBtnPk mbtnShare">BUTTON</button>
+        <br>
+        &ltbutton class="mBtnPk mbtnShare"&gtBUTTON&lt/button&gt;
+
+        <h3>五、WEB版頁碼元件(上下頁跳轉btn的JS語法我暫時不寫,看實際建構網頁時用什麼方式取得頁數資訊,再配合它加上跳轉功能)</h3>
+        <div class="wWhitePgAreaHTML1">
+            <ul class="wWhitePgArea">
+                <!--最前頁button-->
+                <li class="wWhitePgItem"><a class="wWhitePgLink" href="#"><i class="fas fa-angle-double-left"></i></a>
+                </li>
+                <!--前一頁button-->
+                <li class="wWhitePgItem"><a class="wWhitePgLink" href="#"><i class="fas fa-angle-left"></i></a></li>
+                <!--橫向顯示頁碼-->
+                <li class="wWhitePgItem wWhitePGnumber"><a class="wWhitePgLink" href="#">1</a></li>
+                <li class="wWhitePgItem wWhitePGnumber"><a class="wWhitePgLink" href="#">2</a></li>
+                <li class="wWhitePgItem wWhitePGnumber"><a class="wWhitePgLink" href="#">3</a></li>
+                <!--橫向顯示頁碼終止-->
+                <!--下一頁button-->
+                <li class="wWhitePgItem"><a class="wWhitePgLink" href="#"><i class="fas fa-angle-right"></i></a></li>
+                <!--最後一頁button-->
+                <li class="wWhitePgItem"><a class="wWhitePgLink" href="#"><i
+                            class="fas fa-angle-double-right"></i></i></a>
+                </li>
+                <span class="wWhiteText">跳轉至</span>
+                <div class="wWhitePGJPareaL">
+                    <div class="wWhitePGJParea">
+                        <!--顯示跳轉頁數的方框-->
+                        <div class="wWhiteNewPG"></div>
+                        <!--選擇欲跳轉頁數的下拉選單按鈕-->
+                        <div class="wWhiteSlePG"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <ul class="wWhiteJPPGarea">
+                        <!--下拉選單頁碼-->
+                        <li class="wWhiteJPPG"><a class="wWhitePgLink2" href="#">1</a></li>
+                        <li class="wWhiteJPPG"><a class="wWhitePgLink2" href="#">2</a></li>
+                        <li class="wWhiteJPPG"><a class="wWhitePgLink2" href="#">3</a></li>
+                        <!--下拉選單頁碼終止-->
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <span>元件語法:</span>
+        <div class="wWhitePgAreaHTML2"></div>
+
+        <h3>六、WEB版輸入框(輸入框元件暫時將背景色下為深色,請依需求自行修改背景色參數)</h3>
+        <h4>1. wInput8px</h4>
+        <input class="wInput8px wInputShare" type="text" value="請輸入EMAIL">
+        <br>
+        &ltinput class="wInput8px wInputShare" type="text" value="請輸入EMAIL"&gt;
+
+        <h4>2. wInputHelCircle</h4>
+        <input class="wInputHelCircle wInputShare" type="text" value="請輸入EMAIL">
+        <br>
+        &ltinput class="wInputHelCircle wInputShare" type="text" value="請輸入EMAIL"&gt;
+
+        <h4>3. wInputArea</h4>
+        <textarea class="wInputArea wInputShare" name="" id="">Welcome to here! Welcome you!</textarea>
+        <br>
+        &lttextarea class="wInputArea wInputShare" name="" id=""&gtWelcome to here! Welcome you!&lt/textarea&gt
+
+        <h3>七、WEB版彈跳視窗</h3>
+        <h4>1. wSucceDark</h4>
+        <div class="wWhitePgAreaHTML3">
+            <div class="wSucceDark windowShare">
+                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+                <div class="wSucceDarkTick"><i class="fas fa-check"></i></div>
+                <h4>註冊成功！<br>歡迎您加入UPICK！</h4>
+            </div>
+        </div>
+        <span>元件語法:</span>
+        <div class="wWhitePgAreaHTML4"></div>
+
+        <h4>2. wErrorDark</h4>
+        <div class="wWhitePgAreaHTML5">
+            <div class="wErrorDark windowShare">
+                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+                <div class="wErrorDarkCross"><i class="fas fa-times"></i></div>
+                <h4>錯誤資訊！<br>錯誤的錯誤資訊的錯誤！</h4>
+            </div>
+        </div>
+        <span>元件語法:</span>
+        <div class="wWhitePgAreaHTML6"></div>
+
+        <h4>3. wWarnDark</h4>
+        <div class="wWhitePgAreaHTML7">
+            <div class="wWarnDark windowShare">
+                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+                <div class="wWarnDarkSym"><i class="fas fa-exclamation"></i></div>
+                <h4>我是警示！<br>警示你提醒你的警示！</h4>
+            </div>
+        </div>
+        <span>元件語法:</span>
+        <div class="wWhitePgAreaHTML8"></div>
+
+        <h4>4. wShareDark</h4>
+        <div class="wWhitePgAreaHTML9">
+            <div class="wShareDark windowShare">
+                <div class="wWinDarkClo"><i class="fas fa-times"></i></div>
+                <h4>分享</h4>
+                <div class="wShareMedia">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                </div>
+                <div class="wShareArea">
+                    <!--網址要出現的區域-->
+                    <div class="wShareText"></div>
+                    <!--拷貝網址的按鈕-->
+                    <button class="wShareCopy"><i class="far fa-copy"></i></button>
+                </div>
+            </div>
+        </div>
+        <span>元件語法:</span>
+        <div class="wWhitePgAreaHTML10"></div>
+
+        <h3>八、WEB版搜尋輸入框</h3>
+        <div class="wWhitePgAreaHTML11">
+            <div class="wSearchInput">
+                <!--文字輸入框-->
+                <input class="wSearchInputBox wInputShare" type="text" placeholder="顯示卡、記憶體...">
+                <!--搜尋按鈕-->
+                <button class="wSearcBtn"><i class="fas fa-search"></i> 搜尋</button>
+            </div>
+        </div>
+        <span>元件語法:</span>
+        <div class="wWhitePgAreaHTML12"></div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./js/style_js.js"></script>
+    <script>
+        //將WEB版頁碼元件語法輸出到網頁
+        let htmltext = document.querySelector('.wWhitePgAreaHTML1').innerHTML;
+        document.querySelector('.wWhitePgAreaHTML2').innerText = htmltext;
+
+        let htmltext2 = document.querySelector('.wWhitePgAreaHTML3').innerHTML;
+        document.querySelector('.wWhitePgAreaHTML4').innerText = htmltext2;
+
+        let htmltext3 = document.querySelector('.wWhitePgAreaHTML5').innerHTML;
+        document.querySelector('.wWhitePgAreaHTML6').innerText = htmltext3;
+
+        let htmltext4 = document.querySelector('.wWhitePgAreaHTML7').innerHTML;
+        document.querySelector('.wWhitePgAreaHTML8').innerText = htmltext4;
+
+        let htmltext5 = document.querySelector('.wWhitePgAreaHTML9').innerHTML;
+        document.querySelector('.wWhitePgAreaHTML10').innerText = htmltext5;
+
+        let htmltext6 = document.querySelector('.wWhitePgAreaHTML11').innerHTML;
+        document.querySelector('.wWhitePgAreaHTML12').innerText = htmltext6;
+    </script>
+</body>
+
+</html>

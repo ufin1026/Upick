@@ -1,0 +1,1065 @@
+        /*將body的內建scrollbar隱藏*/
+        /*body::-webkit-scrollbar {*/
+        /*display: none;*/
+        /*}*/
+
+        body {
+            overflow-x: hidden;
+        }
+        
+        /*首頁互動特效區*/
+        /*撐高頂部的navbar區塊*/
+        .aniTopSpace {
+            height: 80px;
+            width: 100vw;
+        }
+        /*滿版底部區塊*/
+        .aniContainer-CL {
+            width: 100vw;
+            height: calc(100vh - 80px);
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /*UPICK外層*/
+        .aniUpickOut-CL {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+        }
+
+        /*深色區塊UPICK*/
+        .aniUpick-CL {
+            width: 100vw;
+            height: 100vh;
+            background: #383E44;
+        }
+
+        .aniUpick-CL h1 {
+            width:1500px;
+            margin: 0 auto 0 1340px;
+            font-size: 96px;
+            color: #FD2081;
+            letter-spacing: 20px;
+            box-sizing: border-box;
+            padding-top: 20vh;
+            position: relative;
+
+            animation-name: textbling-pink-U;
+            animation-duration: 1.5s;
+            animation-iteration-count:infinite;
+            animation-timing-function: ease;
+        }
+
+        .aniUpick-CL h1::before {
+            content: "UPICK";
+            color: #7FE0DC;
+            margin-left: -20px;
+            margin-top: -5px;
+            position:absolute;
+
+            animation-name: textbling-green-U;
+            animation-duration: 1s;
+            animation-iteration-count:infinite;
+            animation-timing-function: ease;
+        }
+
+        .aniUpick-CL h1::after {
+            content: "UPICK";
+            color: #ffffff;
+            margin-left: -400px;
+            margin-top: -5px; 
+            position: absolute;
+        }
+
+        /*upick說明文字*/
+        .aniUpick-CL h4 {
+            width: 1500px;
+            color: #ffffff;
+            margin: 50px auto 0 auto;
+            text-align: right;
+            
+        }
+
+        h4.aniUpickWord-CL, .aniUpickWord-CL .fa-angle-double-right{
+            color: #7FE0DC;
+            text-decoration: underline;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+
+         /*UPICK文字閃爍動畫*/
+         @keyframes textbling-pink-U {
+            0%{
+                color: #383E44;
+            }
+            80%{
+                color: #383E44;
+            }
+            90%{
+                color: #FD2081;
+            }
+            95%{
+                color: #383E44;
+            }
+            99%{
+                color: #FD2081;
+            }
+            100%{
+                color: #383E44;
+            }
+
+        }
+
+        @keyframes textbling-green-U {
+            0%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+            80%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+            90%{
+                opacity: 100;
+                margin-left: -10px;
+            }
+            95%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+            99%{
+                opacity: 100;
+                margin-left: -10px;
+            }
+            100%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+        }
+
+        /*首頁UPICK大LOGO*/
+        .aniLogoU-CL {
+            width: 100vw;
+            margin: 100px auto;
+        }
+        
+        .aniLogoU-CL img {
+            display: block;
+            width: 500px;
+            height: 500px;
+            margin-left: 75vw;
+            transform: translateY(-20vh);
+            opacity: 0;
+            transition: 0.5s;
+            transition-timing-function: ease-out;
+        }
+
+        /*WEPICK*/
+        /*白色區塊外層遮罩*/
+        .aniWepickOut-CL {
+            width: 60vw;
+            height: 100vh;
+            position: absolute;
+            overflow: hidden;
+            background: yellow;
+            transform: translateX(-10vw) skewX(-10deg);
+        }
+
+        /*WEPICK區塊*/
+        .aniWepick-CL {
+            width: 110vw;
+            height: 100vh;
+            background: #ffffff;
+            transform: translateX(5vw) skewX(10deg);
+        }
+
+        .aniWepick-CL h1 {
+            width:1500px;
+            margin: 0 auto;
+            font-size: 96px;
+            color: #FD2081;
+            position: relative;
+            margin: 0 auto;
+            letter-spacing: 20px;
+            box-sizing: border-box;
+            padding-left: -1%;
+            padding-top: 20vh;
+
+            animation-name: textbling-pink-W;
+            animation-duration: 1.5s;
+            animation-iteration-count:infinite;
+            animation-timing-function: ease;
+        }
+
+        .aniWepick-CL h1::before {
+            position: absolute;
+            content: "WEPICK";
+            color: #7FE0DC;
+            margin-left: -20px;
+            margin-top: -5px;
+
+
+            animation-name: textbling-green-W;
+            animation-duration: 1s;
+            animation-iteration-count:infinite;
+            animation-timing-function: ease;
+
+        }
+
+        .aniWepick-CL h1::after {
+            position: absolute;
+            content: "WEPICK";
+            color: #383E44;
+            margin-left: -498px;
+            margin-top: -6px;
+        }       
+
+        /*WEPICK文字閃爍動畫*/
+        @keyframes textbling-pink-W {
+            0%{
+                color: #ffffff;
+            }
+            80%{
+                color: #ffffff;
+            }
+            90%{
+                color: #ffdaea;
+            }
+            95%{
+                color: #ffffff;
+            }
+            99%{
+                color: #ffdaea;
+            }
+            100%{
+                color: #ffffff;
+            }
+
+        }
+
+        @keyframes textbling-green-W {
+            0%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+            80%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+            90%{
+                opacity: 100;
+                margin-left: -14px;
+            }
+            95%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+            99%{
+                opacity: 100;
+                margin-left: -14px;
+            }
+            100%{
+                opacity: 0;
+                margin-left: -5px;
+            }
+        }
+
+        /*wepick說明文字*/
+        .aniWepick-CL h4 {
+            width: 1500px;
+            margin: 50px auto 0 auto;
+        }
+
+        h4.aniWepickWord-CL, .aniWepickWord-CL .fa-angle-double-left{
+            color:#FF8888;
+            text-decoration: underline;
+            margin-top: 10px;
+            cursor: pointer;
+
+        }
+
+        /*首頁WEPICK大LOGO*/
+        .aniLogoW-CL {
+            width: 100vw;
+            margin: 100px auto;
+        }
+        
+        .aniLogoW-CL img {
+            display: block;
+            width: 500px;
+            height: 500px;
+            opacity: 0.3;
+            margin-left: -1vw;
+
+            transform: translateX(-30vw);
+            transition: 0.5s;
+            transition-timing-function: ease-out;
+        }        
+
+
+        /*首頁scroll區*/
+        .aniScroll-CL {
+            position:absolute;
+            width: 150px;
+            height: 100px;
+            top: 85%; 
+            z-index: 998;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+
+        .aniScroll-CL h3 {
+            width: 100%;
+            text-align: center;
+            color:#868686;
+            margin-left: 10px;
+        }
+
+        .aniScroll-CL .fas {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            color: #adadad;
+            font-size: 28px;  
+            
+            animation-name: scrolltosale;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes scrolltosale {
+            0%{
+                transform: translateY(-90%);
+                opacity: 0;
+            }
+            100%{
+                transform: translateY(10%);
+                opacity: 1;
+            }
+        }
+
+
+
+        /*商場*/
+        /*移除BS原定的margin-left-15*/
+        .shpTop-CL .row {
+            margin-left: 15px;
+        }
+
+        .shpTop-CL {
+            width: 100vw;
+            background:#ffffff;
+            margin: 0 auto 0 auto;
+        }
+
+        /*移除商場區所有a標籤的hover底線*/
+        .shpTop-CL a, .siteBtn-CL a {
+            text-decoration: none;
+        }
+
+        /*商場頂部預留200px給navbar*/
+        .shpTopSpace-CL {
+            height: 200px;
+            width: 100%;
+            
+        }
+        /*商場內容區*/
+        .shpContainer-CL {
+            width: 1200px;   
+            padding: 0;       
+        }
+
+        /*頂部輪播牆-修改輪播牆寬度*/
+        .shpCarouselOut-CL {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        /*修改輪播牆內容高度*/
+        .shpCarousel-CL {
+            height: 300px;
+        }
+
+        /*修改最上方頁首輪播牆上下頁按鈕顏色*/
+        .shpCarouselOut-CL .shpCaroBtnIcon-CL {
+            color: #ffffff;
+            opacity: 1;
+        }
+
+        /*精選熱銷標題*/
+        .shpHotTitle-CL {
+            width: 320px;
+            height: 60px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .shpHotTitle-CL h1 {
+            line-height: 60px;
+        }
+
+        .shpHotTitle-CL::before {
+            position: absolute;
+            content: "";
+            border-right: 5px solid #383E44;
+            width: 210px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 140px;
+            transform: translateX(-50%) skewX(-20deg);
+        }
+
+        .shpHotTitle-CL::after {
+            position: absolute;
+            content: "";
+            border-right: 10px solid #383E44;
+            border-bottom: 3px solid #383E44;
+            width: 260px;
+            height: 40px;
+            margin-top: -58px;
+            margin-left: 140px;
+            transform: translateX(-50%) skewX(-20deg);
+        }
+
+        /*面包屑-修改背景色為透明*/
+        .breadcrumb {
+            background: transparent;
+        }
+
+        /*面包屑-修改ICLASS圖標margin*/
+        .breadcrumb .fa-map-marker-alt {
+            margin-left: -12px;
+            margin-right: 12px;
+        }
+
+
+        /*熱銷商品區*/
+        .shpHotSale-CL {
+            height: 330px;
+            width: 1200px;
+        }
+
+        /*熱銷商品標題*/
+        .shpHotSaleTitle-CL { 
+            width: 100%;
+            height: 60px;
+            position: relative;
+            margin-top: -30px;
+        }
+
+        .shpHotSaleTitle-CL h1 {
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .shpHotSaleTitle-CL::before {
+            position: absolute;
+            content: "";
+            border-left: 5px solid #383E44;
+            border-right: 5px solid #383E44;
+            width: 280px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%) skewX(-20deg);
+        }
+
+        .shpHotSaleTitle-CL::after {
+            position: absolute;
+            content: "";
+            border-left: 10px solid #383E44;
+            border-right: 10px solid #383E44;
+            width: 320px;
+            height: 40px;
+            margin-top: -58px;
+            margin-left: 50%;
+            transform: translateX(-50%) skewX(-20deg);
+        }
+
+        /*商品輪播牆*/
+        .shpHotSaleContain-CL {
+            width: 1200px;
+            margin-top: 20px;
+        }
+
+        /*商品輪播牆內容-修改商品內容顯示區總高度*/
+        .shpHotSaleInner-CL {
+            height: 280px;
+        }
+
+        /*商品輪播牆單頁內容-修改間距*/
+        .shpHotItemCaro-CL {
+            width: 1150px;
+            margin-left: 60px;
+        }
+
+        .shpHotSale-CL .shpHotItemCaro-CL .col {
+            width: 100px;
+        }
+
+        /*商品輪播牆單頁內容p文字格式-修改寬度*/
+        .shpHotItemCaro-CL p {
+            width: 140px;
+            margin-left: 12px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        /*修改商品輪播牆上下頁之btn範圍與大小*/
+        .shpCaroBtn-CL {
+            margin: 0;
+            padding: 0;
+            width: 50px;
+            height: 280px;
+        }
+
+        /*修改商品輪播牆上下頁之Icon顏色*/
+        .shpCaroBtnIcon-CL {
+            color: #383E44;
+            font-size: 40px;
+        }
+
+        /*修改商品輪播牆-item cart裡的愛心與購物車icon顏色*/
+        .shpHeart-CL {
+            color:#FF8888;
+            font-size: 22px;
+        }
+
+        .shpShopCar-CL {
+            color: #383E44;
+            font-size: 22px;
+            margin-left: 8px;
+        }
+
+        /*修改商品輪播牆-金額文字的顏色與新增錢字符號並調整間距*/
+        span.shpItemDollor-CL {
+            position: relative;
+            color: #FD723C;
+            padding-left: 30px;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        span.shpItemDollor-CL:before {
+            position: absolute;
+            content: "$";
+            margin-left: -16px;
+        }
+
+        /*修改商品輪播牆-修改追蹤橫欄margin為置中,設定margin-top*/
+        .shpHotCartInfo-CL {
+            margin-top: 8px;
+            margin-left: 12px;
+        }
+
+        /*UPICK熱銷商品區*/
+        /*設定此大區長寬與margin-top*/
+        .shpUpHot-CL {
+            height: 330px;
+            width: 1200px;
+            margin: 70px auto 0 auto;
+        }
+
+        /*設定UPICK熱銷商品大圖位置與資訊*/
+        .shpHotImg-CL {
+            background-color: #CB1162;
+            border-radius: 0 8px 8px 0;
+            width: 200px;
+            height: 330px;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .shpHotImg-CL img {
+            display: block;
+            width: 300px;
+        }
+
+        /*設定UPICK熱銷商品頁籤資訊*/
+        .shpPageMark-CL {
+            display: flex;
+            width: 900px;
+            height: 40px;
+            margin: 0 auto;
+            justify-content:space-evenly;
+        }
+
+        .shpPageMartBtn-CL {
+            width: 300px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .shpPageMartBtn-CL:nth-child(1), .shpPageMartBtn-CL:nth-child(2) {
+            border-right: 2px solid #E4E8EE;
+        }
+
+        /*UPICK,WEPICK熱銷商品輪播牆的*/
+        .shpUpHotCaro-CL {
+            transform: translateY(-30vh);
+            opacity: 0;
+        }
+
+        /*UPICK熱銷商品cart總體寬度與各margin設定*/
+        .shpUpHot-CL .shpUpHotCaro-CL {
+            width: 1000px;
+            margin-left: -16px;
+            margin-top: 10px;
+        }
+        .shpUpHot-CL .row {
+            width: 950px;
+            margin-left: 55px;
+        }
+
+        .shpUpHot-CL .row .col {
+            margin-left: -30px;
+        }
+
+        /*WEPICK熱銷商品區*/
+        /*設定此大區長寬與margin-top*/
+        .shpWpHot-CL {
+            height: 330px;
+            width: 1200px;
+            margin: 70px auto 0 auto;
+        }
+
+        /*WEPICK熱銷商品cart總體寬度與各尸margin設定*/
+        .shpWpHot-CL .shpUpHotCaro-CL {
+            width: 1000px;
+            margin-left: -16px;
+            margin-top: 10px;
+        }
+        .shpWpHot-CL .row {
+            width: 950px;
+            margin-left: 55px;
+        }
+        
+        .shpWpHot-CL .row .col {
+            margin-left: -30px;
+        }
+        
+        /*全站熱銷零組件圖片*/
+        .shpHotItemImg-CL {
+            width: 1200px;
+            height: 100px;
+            background-color: pink;
+            margin: 70px auto 0 auto;
+            overflow: hidden;
+        }
+
+        .shpHotItemImg-CL img {
+            display: block;
+        }
+
+        /*零件區*/
+        .shpItem-CL {
+            width: 100%;
+            height: 450px;
+            border: 1px solid #616161;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        /*往上位移是為了下滑效果*/
+        .shpCpu-CL, .shpBoard-CL, .shpRam-CL, .shpHdd-CL, .shpSdd-CL, .shpVga-CL, .shpShell-CL, .shpPower-CL, .shpFan-CL, .shpAcce-CL {
+            transform: translateY(-30vh);
+            opacity: 0;
+        }
+
+
+        /*設定零件區cart-big的標題框背景與圓角*/
+        .shpItemSkew-CL {
+            width: 100%;
+            height: 60px;
+            background: #E4E8EE;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+
+        /*設定零件區cart-big的標題文字置中*/
+        .shpItem-CL h3 {
+            text-align: center;
+            line-height: 60px;
+            letter-spacing: 10px;
+        }
+
+        /*設定零件區cart-big的標題框斜線border-使用偽類*/
+        .shpItemSkew-CL::before {
+            position: absolute;
+            content: "";
+            border-left: 5px solid #383E44;
+            border-right: 5px solid #383E44;
+            width: 280px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%) skewX(-20deg);
+        }
+
+        .shpItemSkew-CL::after {
+            position: absolute;
+            content: "";
+            border-left: 10px solid #383E44;
+            border-right: 10px solid #383E44;
+            width: 320px;
+            height: 40px;
+            margin-top: -58px;
+            margin-left: 50%;
+            transform: translateX(-50%) skewX(-20deg);
+        }
+
+        /*設定零件區商品item cart長寬與間距*/
+        .shpItem-CL .row {
+            width: 95%;
+            margin: 30px auto 0 auto;
+            height: 120px;
+        }
+        .shpItem-CL .col {
+            display: flex;
+            height: 120px;
+        }
+
+        .shpItem-CL img {
+            width: 120px;
+            height: 120px;
+        }
+
+        /*設定零件區-文字金額資訊區總體margin-left*/
+        .shpItemInfo-CL {
+            margin-left: 6px;
+        }
+
+        /*設定零件區-p標籤的間距*/
+        .shpItem-CL p {
+            line-height: 22px;
+        }
+
+        /*設定零件區-heart, car, dollor的間距*/
+        .shpItem-CL .shpHotCartInfo-CL {
+            margin-left: 10px;
+            margin-top: -8px;
+        }
+        .shpItem-CL .shpHeart-CL {
+            margin-left: -15px;
+        }
+
+        .shpItem-CL .shpShopCar-CL {
+            margin-left: 2px;
+        }
+
+        .shpItem-CL .shpItemDollor-CL {
+            padding-left: 18px;
+        }
+
+        /*設定dollor的間距*/
+        .shpItem-CL .shpItemDollor-CL:before {
+            margin-left: -16px;
+        }
+
+        /*此div撐開footer上方的留白空間*/
+        .shpFooterSpace-CL {
+            height: 100px;
+            width: 1300px;
+        }
+
+        /*看更多*/
+        .shpSeeMore-CL {
+            display: block;
+            width: 100%;
+            text-align: right;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            padding-right: 50px;
+            color: #9AA3AC;
+        }
+
+
+        /*以下全為fixed元件*/
+        /*自製scrollBar*/
+        .scrollBar-CL {
+            height: 100vh;
+            width: 20px;
+            background: #100d16;
+            border: 1px solid gray;
+            position: fixed;
+            z-index: 999;
+            left: calc(100vw - 20px);
+        }
+
+        .scrollTP-CL {
+            height: 100vh;
+            width: 100%;
+            background: #fa7c18;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        /*siteBtn*/
+        .siteBtn-CL {
+            position: fixed;
+            z-index: 999;
+            left: calc(100vw - 300px);
+            top: 400px;
+            box-sizing: border-box;
+            border-top: 1px solid #383E44;
+            border-left: 1px solid #383E44;
+            border-right: 1px solid #383E44;
+            background-color: #ffffff;
+            transform: translateY(150vh);
+            transition: 1s;
+        }
+
+        .siteBtnInner-CL, .siteBtnInnerTop-CL {
+            width: 60px;
+            height: 50px;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid #383E44;
+            cursor: pointer;
+        }
+
+        .siteBtnInnerTop-CL {
+            background-color: #383E44;
+            border: 1px solid #ffffff;
+        }
+
+        .siteBtnInnerTop-CL p {
+            color: #ffffff;
+        }
+
+        .siteBtn-CL p {
+            line-height: 22px;
+        }
+
+        a:nth-child(1) .siteBtnInner-CL p, a:nth-child(2) .siteBtnInner-CL p, a:nth-child(3) .siteBtnInner-CL p, a:nth-child(6) .siteBtnInner-CL p, .siteBtnInnerTop-CL p {
+            padding-top: 15px;
+        }
+
+        .siteBtnInner-CL:nth-child(4) p, .siteBtnInner-CL:nth-child(5) p, .siteBtnInner-CL:nth-child(7) p, .siteBtnInner-CL:nth-child(8) p, .siteBtnInner-CL:nth-child(9) p, .siteBtnInner-CL:nth-child(10) p {
+            padding-top: 1px;
+        }
+
+        /*siteBtn hover效果*/
+        .siteBtnInner-CL:hover {
+            background-color: #383E44;
+        }
+
+        .siteBtnInner-CL:hover>p   {
+            color: #ffffff;
+        }
+
+        /*siteBtn2在WEB版時不出現*/
+        .siteBtn-CL2 {
+            display: none;
+        }
+
+
+
+
+        /*手機版*/
+        @media (max-width:419px) and (min-width: 300px) {
+            .aniContainerOut-CL {
+                max-width: 355px;
+            }
+            .shpContainer-CL {
+                width: 355px;
+            }
+            .shpHotSale-CL {
+                width: 355px;
+            }
+            .shpFooterSpace-CL {
+                width: 355px;
+            }
+            .shpHotSaleTitle-CL {
+                display: none;
+            }
+            .shpCarouselOut-CL {
+                width: 355px;
+                overflow: hidden;
+            }
+            /*暫時消失navbar內選項彩虹條也消失*/
+            .navbarAll {
+                width: 375px;
+            }
+            .upick-navbar-container {
+                display: none;
+            }
+            .colorspace {
+                display: none;
+            }
+            /*searchbar消失*/
+            .navSearch-CL {
+                display: none;
+            }
+            /*頁面頂端預留90給navbar*/
+            .aniTopSpace {
+                display: none;
+            }
+            .shpTopSpace-CL {
+                height: 90px;
+                width: 100%;
+            }
+            /*輪播牆寬高調整*/
+            .shpCarouselOut-CL .carousel-indicators {
+                width: 375px;
+                height: 150px;
+                overflow: hidden;
+            }
+            .shpCarousel-CL {
+                width: 100%;
+                height: 100%;
+            }
+            /*輪播牆圖片調整*/
+            .carousel-item {
+                width: 375px;
+                height: 150px;
+            }
+            .carousel-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            /*輪播牆上下頁按鈕*/
+            .carousel-control-prev {
+                left: 2vw;
+            }
+            .carousel-control-next {
+                left: 78vw;
+            }
+            /*面包屑位置調整-上移*/
+            .breadcrumb {
+                margin-top: -80px;
+            }
+            /*面包屑下標題區*/
+            .shpHotTitle-CL {
+                width: 320px;
+                height: 60px;
+                position: relative;
+                margin-top: 20px;
+                padding-top: 20px;
+                margin-left: 10px;
+            }
+            .shpHotTitle-CL h1 {
+                line-height: 60px;
+                font-size: 18px;
+            }
+            .shpHotTitle-CL::before {
+                position: absolute;
+                content: "";
+                border-right: 5px solid #061127;
+                width: 160px;
+                height: 30px;
+                margin-top: 20px;
+                margin-left: 110px;
+                transform: translateX(-50%) skewX(-20deg);
+            }
+            .shpHotTitle-CL::after {
+                position: absolute;
+                content: "";
+                border-right: 10px solid #061127;
+                border-bottom: 3px solid #061127;
+                width: 210px;
+                height: 30px;
+                margin-top: -48px;
+                margin-left: 110px;
+                transform: translateX(-50%) skewX(-20deg);
+            }
+            /*其他輪播牆都消失*/
+            .shpHotSale-CL {
+                display: none;
+            }
+            /*DM廣告區消失*/
+            .shpHotItemImg-CL {
+                display: none;
+            }
+   
+            /*商品展示區*/
+            .shpItem-CL {
+                width: 355px;
+                height: 300px;
+                border: none;
+                margin-top: 60px;
+            }
+            .shpCpu-CL, .shpBoard-CL, .shpRam-CL, .shpHdd-CL, .shpSdd-CL, .shpVga-CL, .shpShell-CL, .shpPower-CL, .shpFan-CL, .shpAcce-CL {
+                transform: translateY(-0px);
+                height: 630px;
+            }
+            .shpItem-CL .row:nth-child(2) {
+                display: none;
+            }
+            .shpItem-CL h3 {
+                letter-spacing: 0;
+            }
+            /*設定零件區cart-big的標題框斜線border-使用偽類*/
+            .shpItemSkew-CL::before {
+                display: none;
+            }
+
+            .shpItemSkew-CL::after {
+                display: none;
+            }
+
+            .shpItem-CL .col {
+                display: block;
+                margin-bottom: 150px;
+            }
+            .shpItem-CL .col img {
+                vertical-align:0;
+            }
+            /*看更多*/
+            .shpSeeMore-CL {
+                display: block;
+                width: 355px;
+                text-align: right;
+                margin-top: 425px;
+                font-size: 18px;
+                font-weight: 700;
+                padding-right: 30px;
+                color: #9AA3AC;
+            }
+
+        
+            /*card下的愛金購物車與金額*/
+            .shpItem-CL .shpHotCartInfo-CL {
+                text-align: left;
+            }
+            /*金額左內距調整*/
+            span.shpItemDollor-CL {
+                padding-left: 28px;
+            }
+ 
+            /*手機版gotop按鈕*/
+            .siteBtn-CL2 {
+                display: block;
+                text-align: center;
+                line-height: 50px;
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                z-index: 999;
+                background: #374052;
+                border: 1px solid #ffffff;
+                position: fixed;
+                top: 85vh;
+                left: 80vw;
+                }
+            .siteBtn-CL2 a {
+                color: #ffffff;
+                font-weight: 500;
+                text-decoration: none;
+            }
+
+        }
+
+            
+
+
+    

@@ -1,0 +1,122 @@
+.shpFooterOut-CL {
+    background-color: #383E44;
+    height: 292px;
+    width: 100vw;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.shpFooter-CL {
+    width: 1200px;
+    color: #ffffff;
+    box-sizing: border-box;
+    margin: auto;
+    padding-top: 35px;
+    font-size: 14px;
+}
+
+/*聯絡電話資訊*/
+.shpFooterTel-CL {
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.shpFooterTelinfo-CL {
+    text-align: center;
+    font-size: 14px;
+    margin: 0 20px;
+}
+
+.shpFooterTelinfoSocial-CL {
+    font-size: 26px;
+    text-align: left;
+}
+
+/*門市資訊區各欄title*/
+.shpFooterStor-CL {
+    margin: 30px auto;
+    height: 100px;
+}
+
+.shpFooterStor-CL .col-lg ul {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.shpFooterStor-CL .col-lg li {
+    font-size: 12px;
+}
+
+/*門市資訊欄li的padding*/
+.shpFooterStor-CL li {
+    padding-left: 7px;
+}
+
+/*門市資訊*/
+.shpFooterStorInfo-CL {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 100px;
+    border-right: 1px solid #ffffff;
+}
+
+/*版權宣告*/
+.shpCopyright-CL p {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 10px;
+}
+
+/*彩虹條*/
+.colorspace {
+    height: 8px;
+    padding-top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #7FE0DC 1%, #FF8888 50%, #7FE0DC 99%);
+}
+
+
+
+
+/*手機版*/
+@media (max-width:419px) and (min-width: 300px) {
+    /*footer高度*/
+    .shpFooter-CL {
+        height: 1000px;
+    }
+    .shpFooterOut-CL {
+        height: 1000px;
+    }
+    /*footer寬度*/
+    .shpFooter-CL {
+        width: 355px;
+    }
+    .shpFooterTel-CL {
+        display: block;
+        width: 355px;
+    }
+    /*門市資訊分界線*/
+    .shpFooterStorInfo-CL {
+        border-right: 0;
+        border-bottom: 1px solid #ffffff;
+        margin-left: -10px;
+    }
+    /*門市資訊區*/
+    .shpFooterStor-CL .row {
+        margin-top: 20px;
+    }
+    /*社群媒體圖標*/
+    .shpFooterTelinfoSocial-CL {
+        text-align: center;
+    }
+    /*版權宣告位置*/
+    .shpCopyright-CL {
+        width: 355px;
+        padding-top: 0;
+        margin-top: 600px;
+    }
+    
+}

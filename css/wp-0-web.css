@@ -1,0 +1,81 @@
+.wpNavSpace-CL {
+    height: 200px;
+    width: 1300px;
+}
+
+.wp-0-container a:hover{
+    color: transparent;
+    text-decoration: none;
+}
+
+
+/* 繪圖設計 */
+.wp-design {
+    color: #FF98C9;
+}
+
+/* 文書處理 */
+.wp-document {
+    color: #BDAAFF;
+}
+
+/* 影音剪輯 */
+.wp-editing {
+    color: #47D5CE;
+}
+
+/* 電競遊戲 */
+.wp-gaming {
+    color: #43D3FD;
+}
+
+
+
+.wp-0-container {
+    display: flex;
+}
+
+
+.wp-img {
+    width: 100%;
+    padding: 30px 15px;
+}
+
+.wp-originStyle {
+    border-radius: 150px;
+    width: 40px;
+    height: 600px;
+}
+
+.wp-design-hover:hover {
+    background-color: #ff98c930;
+    border-radius: 150px;
+    width: 40px;
+    height: 600px;
+    transition: .8s;
+}
+
+.wp-document-hover:hover {
+    background-color: #BDAAFF30;
+    border-radius: 150px;
+    width: 40px;
+    height: 600px;
+    transition: .5s;
+}
+
+.wp-editing-hover:hover {
+    background-color: #47D5CE30;
+    border-radius: 150px;
+    width: 40px;
+    height: 600px;
+    transition: .5s;
+}
+
+
+.wp-gaming-hover:hover {
+    background-color: #43D3FD30;
+    border-radius: 150px;
+    width: 40px;
+    height: 600px;
+    transition: .5s;
+}

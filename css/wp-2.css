@@ -1,0 +1,126 @@
+.wp {
+    margin: auto;
+    padding-top: 200px;
+}
+
+.arrow {
+    font-size: 28px;
+    position: absolute;
+    transition: .3s;
+    z-index: 10;
+    color: #383E44;
+}
+
+.left-arrow {
+    top: 50%;
+    left: 0%;
+}
+
+.right-arrow {
+
+    top: 50%;
+    right: 0%;
+}
+
+.wp-button {
+    width: 200px;
+    border-radius: 80px;
+    padding: 8px;
+    margin: 4px;
+    border: none;
+    transition: .3s;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
+
+.wp-button:hover {
+    color: #E4E8EE;
+}
+
+.wp-btn-product {
+    border-radius: 80px;
+    padding: 8px;
+    margin: 4px;
+    border: none;
+    transition: .3s;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    transition: .5s;
+    align-items: end;
+}
+
+.wp-btn-product:hover {
+    color: #fff;
+    transition: .5s;
+}
+
+
+
+.wp-card {
+    height: 500px;
+    background-color: #FF98C930;
+    border-radius: 4px;
+    padding: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* justify-content: center;
+    align-self: center; */
+}
+
+.totalPrice {
+    text-align: center;
+}
+
+.list-group {
+    height: 330px;
+    overflow-y: scroll;
+}
+
+.wp-product-index {
+    justify-content: center;
+    align-self: center;
+}
+
+
+.wp-info {
+    justify-content: center;
+    align-self: center;
+}
+
+.wp-slide {
+    max-width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+.wp-wrap {
+    width: 700px;
+    position: absolute;
+}
+
+.wp-row {
+    width: 220px;
+    height: 500px;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #f5f6f8;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.wp-row img {
+    width: 100%;
+}
+
+.wp-row-p {
+    background-color: #FF98C960;
+    color: #fafafa;
+}

@@ -1,0 +1,292 @@
+body {
+    background-color: #383E44;
+}
+
+.container {
+    padding: 0;
+    position: relative;
+}
+
+/* 會員登入Tab */
+#memLoginTab_HC {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+/* Tab分頁 */
+
+.memTabTitle_HC {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.memTabStyle_HC {
+    background: none;
+    font-weight: 700;
+    font-size: 28px;
+    color: #E4E8EE;
+}
+
+.memTabTitle_HC>a {
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    transition: .4s;
+}
+
+.memTabTitle_HC>a:hover {
+    color: #7FFFE1;
+}
+
+.memActive_HC {
+    background: none;
+    color: #7FFFE1;
+}
+
+/* 輸入框標題 */
+#memLoginTab_HC>.memTabCon_HC>.memColumn_HC>p {
+    clear: both;
+    color: #7FFFE1;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 輸入框樣式 */
+#memLoginTab_HC>.memTabCon_HC>.memColumn_HC>input {
+    width: 300px;
+    height: 40px;
+    border-radius: 25px;
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #E4E8EE;
+    background: none;
+    padding-left: 15px;
+    color: #FFF;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: .5s;
+}
+
+#memLoginTab_HC>.memTabCon_HC>.memColumn_HC>input:focus {
+    border: 2px solid #7FFFE1;
+}
+
+/* 顯示隱藏密碼 */
+.memLoginPassword_HC {
+    position: relative;
+}
+
+.memPassIcon_HC {
+    position: absolute;
+    margin-left: -35px;
+    margin-top: 12px;
+    color: #FFF;
+}
+
+/* 忘記密碼 */
+.memForgetArea_HC {
+    width: 300px;
+    height: 30px;
+    position: relative;
+}
+
+.memForget_HC {
+    font-size: 14px;
+    color: #7FFFE1;
+    text-decoration: underline;
+    position: absolute;
+    right: 0;
+}
+
+.memForget_HC:hover {
+    color: #7FE0DC;
+}
+
+/* 登入、加入按鈕 */
+button {
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.memBtnShare_HC {
+    width: 300px;
+    height: 35px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 快速登入 */
+#memQuickLog_HC {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 10px;
+}
+
+#memQuickLog_HC a {
+    width: 150px;
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+.memDivider_HC {
+    border-right: 1px solid #FFF;
+}
+
+#memQuickLog_HC>a>i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/* 同意條款 */
+.memCheck_HC {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.memCheck_HC input[type="checkbox"] {
+    background: none;
+    border-radius: 1px solid #7FFFE1;
+    margin-right: 5px;
+    color: #e1f8f3;
+}
+
+.memCheck_HC>p>a {
+    color: #7FFFE1;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.memCheck_HC>p {
+    color: #7FFFE1;
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 0;
+}
+
+/* 錯誤提示 */
+.memErroCSS_HC>i,
+p {
+    color: #FF8888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.memCheckErro_HC {
+    display: none;
+}
+
+.memNoInput_HC {
+    display: none;
+}
+
+.memErroCSS_HC>i {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* 帳號格式錯誤 */
+.memErroEmail_HC {
+    display: none;
+}
+
+.memErroEmail2_HC {
+    display: none;
+}
+
+/* 未同意 */
+.memNotCheck_HC {
+    display: none;
+}
+
+/* 註冊成功彈跳窗樣式 */
+.windowShare_HC {
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.wWinDarkClo {
+    margin-left: 88%;
+}
+
+.wSucceDarkTick {
+    line-height: 0;
+}
+
+.wSucceDark h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.memSuccess_HC {
+    display: none;
+    position: absolute;
+    left: 400px;
+    top: 200px;
+    z-index: 99;
+}
+
+
+/* 手機板 */
+@media screen and (max-width: 375px) {
+    .container {
+        width: 355px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Tab分頁 */
+    #memLoginTab_HC {
+        width: 300px;
+        height: 400px;
+        margin: 0 auto;
+        margin-top: 150px;
+    }
+
+    .memTabStyle_HC {
+        font-size: 24px;
+    }
+
+    /* 輸入框標題 */
+    #memLoginTab_HC>.memTabCon_HC>.memColumn_HC>p {
+        font-size: 14px;
+    }
+
+    /* 註冊成功彈跳窗樣式 */
+    .windowShare_HC {
+        width: 320px;
+    }
+
+    .wWinDarkClo {
+        margin-left: 88%;
+        margin-top: 5px;
+    }
+
+    .wSucceDarkTick {
+        line-height: 0;
+        height: 60px;
+    }
+
+    .memSuccess_HC {
+        display: none;
+        position: absolute;
+        left: 18px;
+        top: 200px;
+        z-index: 99;
+    }
+}

@@ -1,0 +1,110 @@
+*{
+    /* outline:1px solid; */
+}
+
+button:focus{
+    outline: none;
+    box-shadow: 0 0 2px 3px #01FFC3;
+    
+}
+.carContainer_ZY{
+    background-color: #D2D8E2;
+    max-width: 1200px;
+    margin: 0px auto;
+    border-radius: 8px;
+    padding-top: 200px;
+}
+
+.carNoThing_ZY{
+    width: 450px;
+    height: 200px;
+    background-color: #d9b073;
+    margin: 100px auto 50px;
+}
+
+.carNoThingText_ZY{
+    margin: 0 auto;
+    
+}
+
+.carNoThingText_ZY h5{
+    font-weight: bold;
+    margin: 0 auto;
+    align-items: center;
+
+}
+
+.carNoThingBtnGroup_ZY{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+.carNoThingBtnGroupM_ZY{
+    display: none;
+}
+
+.carGO_ZY{
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    width: 180px;
+    height: 40px;
+    border:3px solid #061127;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+
+}
+
+.carGoWp_ZY{
+    color: white;
+    background:#061127;
+}
+
+.carGoWp_ZY i{
+    font-size: 24px;
+    margin: 0 10px 0 0;
+    
+}
+
+.carGoUp_ZY{
+    color: white;
+    background:#061127;
+}
+
+.carGoUp_ZY i{
+    font-size: 24px;
+    margin: 0 0 0 10px;
+}
+
+/*此div撐開footer上方的留白空間*/
+.shpFooterSpace-CL {
+    height: 100px;
+    width: 1300px;
+}
+
+@media screen and (max-width:375px) {
+    .carContainer_ZY{
+        margin: 50px auto 200px;
+    }
+    .carNoThing_ZY{
+        width: 200px;
+        height: 100px;
+        margin: 10px auto;
+    }
+    .carNoThingBtnGroupBoxM_ZY{
+        display: block;
+        margin: 20px auto;
+    }
+    .carNoThingBtnGroupBox_ZY{
+        display: none;
+    }
+    .carGO_ZY{
+        margin: 10px auto;
+        width: 120px;
+        font-size: 16px;
+    }
+}
