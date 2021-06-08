@@ -11,7 +11,7 @@ if ($tableid == '18drawing_com' or '19gaming_com') {
     $between2 = 5;
 }
 if ($tableid != ('18drawing_com' or '19gaming_com')) {
-    $between1 = "";ㄕ
+    $between1 = "";
     $between2 = "";
 }
 $game = "SELECT * FROM $tableid WHERE id BETWEEN $between1 AND $between2";

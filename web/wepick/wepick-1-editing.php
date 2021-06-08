@@ -44,8 +44,8 @@
                 影片剪輯
             </h2>
             <div class="mx-auto wp-editing wp-button-group">
-                <a href="/Upick/web/wepick/wepick-2-editing.php">
-                    <button class="wp-button wp-editing-button wp-editing.php?classid=19gaming_com">一鍵組機</button>
+                <a href="/Upick/web/wepick/wepick-2-editing.php?classid=19gaming_com">
+                    <button class="wp-button wp-editing-button wp-editing">一鍵組機</button>
                 </a>
                 <a href="/Upick/web/wepick/wepick-3-editing.php">
                     <button class="wp-button wp-editing-button wp-editing">自選零件</button>

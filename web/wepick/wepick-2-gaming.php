@@ -1,3 +1,24 @@
+<?php
+//資料庫連結
+require __DIR__ . '/../../__connect_db.php';
+define('WEB_ROOT', '/UPICK');
+session_start();
+
+$tableid = isset($_GET['classid']) ? ($_GET['classid']) : "";
+
+if ($tableid == '18drawing_com' or '19gaming_com') {
+    $between1 = 1;
+    $between2 = 5;
+}
+if ($tableid != ('18drawing_com' or '19gaming_com')) {
+    $between1 = "";ㄕ
+    $between2 = "";
+}
+$game = "SELECT * FROM $tableid WHERE id BETWEEN $between1 AND $between2";
+$game1 = $pdo->query($game)->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
