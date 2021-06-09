@@ -7,42 +7,46 @@ session_start();
 //取得01cpu品牌名稱
 $cpu1 = "SELECT `brand` FROM 01cpu GROUP BY brand";
 $stmt1 = $pdo->query($cpu1);
-$row1 = $stmt1->fetchall();
+$row_cpu = $stmt1->fetchall();
 
 //取得02mb品牌名稱
 $mb1 = "SELECT `brand` FROM 02mb GROUP BY brand";
 $stmt2 = $pdo->query($mb1);
-$row2 = $stmt2->fetchall();
+$row_mb = $stmt2->fetchall();
+
+$mb2 = "SELECT `name`,`price`  FROM 02mb WHERE brand = 'ASUS華碩'";
+$stmt2 = $pdo->query($mb2);
+$row_mb2 = $stmt2->fetchall();
 
 //取得03vga品牌名稱
 $vga1 = "SELECT `brand` FROM 03vga GROUP BY brand";
 $stmt3 = $pdo->query($vga1);
-$row3 = $stmt3->fetchall();
+$row_vga = $stmt3->fetchall();
 
 //取得04ram品牌名稱
 $vga1 = "SELECT `brand` FROM 04ram GROUP BY brand";
 $stmt4 = $pdo->query($vga1);
-$row4 = $stmt4->fetchall();
+$row_ram = $stmt4->fetchall();
 
 //取得05hdd品牌名稱
 $vga1 = "SELECT `brand` FROM 05hdd GROUP BY brand";
 $stmt5 = $pdo->query($vga1);
-$row5 = $stmt5->fetchall();
+$row_hdd = $stmt5->fetchall();
 
 //取得06ssd品牌名稱
 $vga1 = "SELECT `brand` FROM 06ssd GROUP BY brand";
 $stmt6 = $pdo->query($vga1);
-$row6 = $stmt6->fetchall();
+$row_ssd = $stmt6->fetchall();
 
 //取得07computercase品牌名稱
 $vga1 = "SELECT `brand` FROM 07computercase GROUP BY brand";
 $stmt7 = $pdo->query($vga1);
-$row7 = $stmt7->fetchall();
+$row_case = $stmt7->fetchall();
 
 //取得08powersupply品牌名稱
 $vga1 = "SELECT `brand` FROM 08powersupply GROUP BY brand";
 $stmt8 = $pdo->query($vga1);
-$row8 = $stmt8->fetchall();
+$row_power = $stmt8->fetchall();
 
 
 ?>
@@ -138,7 +142,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -161,7 +165,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -177,27 +181,37 @@ $row8 = $stmt8->fetchall();
                 <div class="item">中央處理器</div>
                 <div class="brand">
                     <form class="widget brand">
-                        <select name="brand">
+                        <select name="amount">
                             <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
-                        <div class="select">
+                        <div class="select" name="brand" id="brand">
                             <span class="value"></span>
                             <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row1 as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
+                                <li class="option" value="0">品牌</li>
+                                <li class="option" value="1">AMD</li>
+                                <li class="option" value="2">Intel</li>
                             </ul>
                         </div>
-                    </form>
-                </div>
+                    <!-- <div class="select" name="brand" id="brand">
+                        <span class="value"></span>
+                        <ul class="optList hidden">
+                            <li class="option" value="0">品牌</li>
+                            <?php foreach ($row_cpu as $key => $value) {
+                                foreach ($value as $key2 => $value2) {
+                            ?>
+                            <li class="option">
+                                <?= $value2 ?>
+                            </li>
+                            <?php } ?>
+                            <?php } ?>
+                        </ul>
+                    </div> -->
+                </form>
+            </div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
@@ -208,19 +222,19 @@ $row8 = $stmt8->fetchall();
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
                             <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                                <li class="option" value="0">商品名稱</li>
+                                <li class="option" value="1">AMD</li>
+                                <li class="option" value="2">Intel</li>
+                                <li class="option" value="3">pro4</li>
+                                <li class="option" value="4">pro5</li>
                             </ul>
-                        </div>
+                    </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -243,7 +257,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add" id="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -256,13 +270,13 @@ $row8 = $stmt8->fetchall();
                 <div class="brand">
                     <form class="widget brand">
                         <select name="brand">
-                           <option>商品名稱</option>
+                           <option>品牌</option>
                         </select>
                         <div class="select">
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row2 as $key => $value) {
+                                <?php foreach ($row_mb as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -280,18 +294,23 @@ $row8 = $stmt8->fetchall();
                         </select>
 
                         <div class="select">
-                            <span class="value">品牌</span>
+                            <span class="value">商品名稱</span>
                             <ul class="optList hidden">
                                 <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                                <?php foreach ($row_mb2 as $key => $value) {
+                                    foreach ($value as $key2 => $value2) {
+                                ?>
+                                        <li class="option"><?= $value2 ?></li>
+
+                                <?php }
+                                } ?>
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">
+                    
+                </div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -314,7 +333,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -337,7 +356,7 @@ $row8 = $stmt8->fetchall();
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row3 as $key => $value) {
+                                <?php foreach ($row_vga as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -369,7 +388,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -392,7 +411,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -411,7 +430,7 @@ $row8 = $stmt8->fetchall();
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row4 as $key => $value) {
+                                <?php foreach ($row_ram as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -443,7 +462,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -466,7 +485,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -485,7 +504,7 @@ $row8 = $stmt8->fetchall();
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row5 as $key => $value) {
+                                <?php foreach ($row_hdd as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -517,7 +536,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -540,7 +559,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -559,7 +578,7 @@ $row8 = $stmt8->fetchall();
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row6 as $key => $value) {
+                                <?php foreach ($row_ssd as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -591,7 +610,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -614,7 +633,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -637,7 +656,7 @@ $row8 = $stmt8->fetchall();
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row7 as $key => $value) {
+                                <?php foreach ($row_case as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -669,7 +688,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -692,7 +711,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -715,7 +734,7 @@ $row8 = $stmt8->fetchall();
                             <span class="value"></span>
                             <ul class="optList hidden">
                                 <li class="option">品牌</li>
-                                <?php foreach ($row8 as $key => $value) {
+                                <?php foreach ($row_power as $key => $value) {
                                     foreach ($value as $key2 => $value2) {
                                 ?>
                                         <li class="option"><?= $value2 ?></li>
@@ -747,7 +766,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -770,7 +789,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -824,7 +843,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -847,7 +866,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -904,7 +923,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -927,7 +946,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -980,7 +999,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1003,7 +1022,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -1056,7 +1075,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1079,7 +1098,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -1136,7 +1155,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1159,7 +1178,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -1212,7 +1231,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1235,7 +1254,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -1288,7 +1307,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$1000</div>
+                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1311,7 +1330,7 @@ $row8 = $stmt8->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$1000</div>
+                <div class="sub price">$0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -1356,7 +1375,7 @@ $row8 = $stmt8->fetchall();
                                     </ul>
                                 </div>
                             </form>
-                            <span class="price my-auto">$1000</span>
+                            <span class="price my-auto">$0</span>
                         </div>
                     </div>
                     <div class="col-1 my-auto trashcan">
@@ -1519,7 +1538,7 @@ $row8 = $stmt8->fetchall();
 
         $(document).on('click', '.add', function () {
             console.log('hi')
-            $("#upList").append('<div class=" list-group-item d-flex"><div class="col-11"><p class="my-auto "> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p><div class="d-flex justify-content-between"><form class="widget amount"><select name="amount"><option>數量</option><option>pro2</option><option>pro3</option><option>pro4</option><option>pro5</option></select><div class="select"><span class="value"></span><ul class="optList hidden"><li class="option">0</li><li class="option">1</li><li class="option">2</li><li class="option">3</li><li class="option">4</li><li class="option">5</li></ul></div></form><span class="price my-auto">$1000</span></div></div><div class="col-1 my-auto trashcan"><i class=" fas fa-trash "></i></div></div></div>');
+            $("#upList").append('<div class=" list-group-item d-flex"><div class="col-11"><p class="my-auto "> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p><div class="d-flex justify-content-between"><form class="widget amount"><select name="amount"><option>數量</option><option>pro2</option><option>pro3</option><option>pro4</option><option>pro5</option></select><div class="select"><span class="value"></span><ul class="optList hidden"><li class="option">0</li><li class="option">1</li><li class="option">2</li><li class="option">3</li><li class="option">4</li><li class="option">5</li></ul></div></form><span class="price my-auto">$0</span></div></div><div class="col-1 my-auto trashcan"><i class=" fas fa-trash "></i></div></div></div>');
         })
         // var upList = document.getElementById('upList');
         // var newList = document.createElement('div');
@@ -1536,6 +1555,50 @@ $row8 = $stmt8->fetchall();
             console.log('clear')
             $('#upList').children().remove()
         })
+
+        const row_cpu = <?= json_encode($row_cpu) 
+        ?>;
+
+        function change(event){
+            console.log(event.target.value);
+            changeCate('')
+        }
+
+
+        let districtObj = [
+            ['商品名稱'],
+            ['商品名稱', 'AMD Athlon-3000G 雙核心 中央處理器', 'AMD Ryzen 3-3100 3.6GHz 四核心 中央處理器', 'AMD Ryzen 3 R3-3300X 中央處理器', 'AMD Ryzen 5-3500X 3.6GHz六核心 中央處理器', 'AMD Ryzen 5 R5-3400G 中央處理器'],
+            ['商品名稱', 'Intel Core i3-10100 中央處理器', 'Intel Core i5-11600KF 中央處理器', 'Intel Core i5-11600K 中央處理器','Intel Core i5-10400 中央處理器'],
+        ];
+
+        var selectorVal = '0';  // 初始值
+
+        $('#brand li').click(function () {
+            // $('#brand-select').change
+            console.log('hi', $(this).val());
+
+            if ($(this).val() == selectorVal) {
+
+            }
+            else {
+                let selectedselect = $(this).val();
+                console.log('hello', $(this).val());
+                $('#productname li').each(function () {
+                    $(this).text(districtObj[selectedselect][$(this).val()]);
+                    console.log('each', districtObj[selectedselect][$(this).val()]);
+                })
+            }
+        });
+
+        function CPU(){
+        $.ajax({
+        type: POST;
+        url: "/Upick/web/upick/cpu-api.php";
+        dataType: "json";
+        success:function(data){ },
+        error: function(data) { }
+        });
+
     </script>
 </body>
 

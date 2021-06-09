@@ -17,6 +17,8 @@ if ($tableid != ('18drawing_com' or '19gaming_com')) {
 $draw = "SELECT * FROM $tableid WHERE id BETWEEN $between1 AND $between2";
 $draw1 = $pdo->query($draw)->fetchAll();
 
+if(! isset($_SESSION))
+
 ?>
 
 <!DOCTYPE html>
@@ -129,7 +131,7 @@ $draw1 = $pdo->query($draw)->fetchAll();
      // 選擇後新增li
      $(document).on('click', '#wp-btn-product', function () {
             console.log('hi')
-            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" > HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2 / 16 </p><h5 class="price col-3 my-auto">$1000</h5></div >');
+            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" > <?= $r['name'] ?> </p><h5 class="price col-3 my-auto"><?= $r['price'] ?></h5></div >');
         })
 
         let newsPage = 0;
