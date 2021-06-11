@@ -193,10 +193,10 @@ width: 200px;
                         <div class="col-lg-4 col-sm-12">
                             <div class="wp-row">
                                 <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
-                                <h5 class="wp-2-producttitle"><?= $r['name'] ?></h5>
+                                <h5 class="wp-2-producttitle"><?= $r['brand'] ?></h5>
                                 <div class="product-info">
                                     <p>
-                                    11111111111
+                                    <?= $r['name'] ?>
                                     </p>
                                 </div>
 

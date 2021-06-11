@@ -1590,14 +1590,15 @@ $row_power = $stmt8->fetchall();
             }
         });
 
-        function CPU(){
-        $.ajax({
-        type: POST;
-        url: "/Upick/web/upick/cpu-api.php";
-        dataType: "json";
-        success:function(data){ },
-        error: function(data) { }
-        });
+        // function CPU(){
+        // $.ajax({
+        // type: POST;
+        // url: "/Upick/web/upick/cpu-api.php";
+        // dataType: "json";
+        // success:function(data){ },
+        // error: function(data) { }
+        // });
+        // };
 
     </script>
 </body>
