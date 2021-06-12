@@ -5,117 +5,18 @@ session_start();
 
 $pid = isset($_GET['pid']) ? $_GET['pid'] : '';
 $tableid = isset($_GET['classid']) ? ($_GET['classid']) : '';
-$search = isset($_GET['search']) ? $_GET['search'] : '';
-
-$tableid = isset($_GET['classid']) ? ($_GET['classid']) : '';
-
-if ($tableid == '01cpu') {
-    $classname = 'CPU';
-    $hotsale1 = "SELECT * FROM 01cpu WHERE id BETWEEN 6 AND 9";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 01cpu WHERE id BETWEEN 11 AND 14";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 01cpu WHERE id BETWEEN 34 AND 37";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '02mb') {
-    $classname = '主機板';
-    $hotsale1 = "SELECT * FROM 02mb WHERE id BETWEEN 21 AND 24";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 02mb WHERE id BETWEEN 16 AND 19";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 02mb WHERE id BETWEEN 6 AND 9";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '04ram') {
-    $classname = '記憶體';
-    $hotsale1 = "SELECT * FROM 04ram WHERE id BETWEEN 14 AND 17";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 04ram WHERE id BETWEEN 26 AND 29";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 04ram WHERE id BETWEEN 34 AND 37";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '05hdd') {
-    $classname = '傳統硬碟';
-    $hotsale1 = "SELECT * FROM 05hdd WHERE id BETWEEN 13 AND 16";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 05hdd WHERE id BETWEEN 17 AND 20";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 05hdd WHERE id BETWEEN 26 AND 29";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '06ssd') {
-    $classname = '固態硬碟';
-    $hotsale1 = "SELECT * FROM 06ssd WHERE id BETWEEN 23 AND 26";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 06ssd WHERE id BETWEEN 16 AND 19";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 06ssd WHERE id BETWEEN 31 AND 34";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '03vga') {
-    $classname = '顯示卡';
-    $hotsale1 = "SELECT * FROM 03vga WHERE id BETWEEN 26 AND 29";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 03vga WHERE id BETWEEN 21 AND 24";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 03vga WHERE id BETWEEN 12 AND 15";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '07computercase') {
-    $classname = '電腦機殼';
-    $hotsale1 = "SELECT * FROM 07computercase WHERE id BETWEEN 19 AND 22";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 07computercase WHERE id BETWEEN 9 AND 12";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 07computercase WHERE id BETWEEN 12 AND 15";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '08powersupply') {
-    $classname = '電源供應器';
-    $hotsale1 = "SELECT * FROM 08powersupply WHERE id BETWEEN 21 AND 24";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 08powersupply WHERE id BETWEEN 13 AND 16";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 08powersupply WHERE id BETWEEN 17 AND 20";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '12fan') {
-    $classname = '散熱產品';
-    $hotsale1 = "SELECT * FROM 12fan WHERE id BETWEEN 11 AND 14";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 12fan WHERE id BETWEEN 6 AND 9";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 12fan WHERE id BETWEEN 19 AND 22";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
-
-if ($tableid == '09screen') {
-    $classname = '週邊產品';
-    $hotsale1 = "SELECT * FROM 09screen WHERE id BETWEEN 11 AND 14";
-    $hotsalerow1 = $pdo->query($hotsale1)->fetchAll();
-    $hotsale2 = "SELECT * FROM 09screen WHERE id BETWEEN 7 AND 10";
-    $hotsalerow2 = $pdo->query($hotsale2)->fetchAll();
-    $hotsale3 = "SELECT * FROM 09screen WHERE id BETWEEN 2 AND 5";
-    $hotsalerow3 = $pdo->query($hotsale3)->fetchAll();
-}
 
 $sql = "SELECT * FROM $tableid WHERE `sid`=?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$pid]);
 $row = $stmt->fetch();
 
-//print_r(array_count_values($row));
-
+foreach ($row as $key => $value) {
+    echo '<br>';
+    echo $key;
+    echo '<br>';
+    echo $value;
+}
 
 
 // echo json_encode($row);
@@ -127,13 +28,13 @@ if (empty($row)) {
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php include __DIR__ . '/../../parts/html_head.php' ?>
-    <?php include __DIR__ . '/../../parts/html_navbar_phone.php' ?>
     <!--固定元件:UMA小幫手style-->
     <link rel="stylesheet" href="/Upick/css/style_fixed_element.css">
     <!--商品細節頁 style-->
@@ -163,10 +64,10 @@ if (empty($row)) {
     </div>
 
     <!--手機版-加入追蹤清單與購物車-->
-    <div class="dtlAddCarPhone-CL" data-sid="<?= $row['sid'] ?>" data-tbid="<?= $tableid ?>">
-        <span>售價$<?= $row['price'] ?></span>
-        <button class="dtlAddFollowPhoneBtn-CL"><i class="far fa-heart"></i> 加入追蹤清單</button>
-        <button class="dtlAddShopCarPhoneBtn-CL"><i class="fas fa-shopping-cart"></i> 加入購物車</button>
+    <div class="dtlAddCarPhone-CL">
+        <span>19,800</span>
+        <button><i class="far fa-heart"></i> 加入追蹤清單</button>
+        <button><i class="fas fa-shopping-cart"></i> 加入購物車</button>
     </div>
 
 
@@ -184,9 +85,9 @@ if (empty($row)) {
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <i class="fas fa-map-marker-alt"></i>
-                        <li class="breadcrumb-item"><a href="/Upick/shopHome.php?aniarea=none&shparea=block">Home</a></li>
-                        <li class="breadcrumb-item"><a href="item_page.php?classid=<?= $tableid ?>"><?= $classname ?></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?= $row['name'] ?></li>
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Data</li>
                     </ol>
                 </nav>
                 <!--細節頁頂部區域(圖片商品標題金額等資訊區)-->
@@ -200,10 +101,10 @@ if (empty($row)) {
                         <!--手機版-面包屑-->
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb2">
-                                <i class="fas fa-map-marker-alt dtlMarker-CL"></i>
-                                <li class="breadcrumb-item"><a href="/Upick/shopHome.php">Home</a></li>
-                                <li class="breadcrumb-item"><a href="item_page.php?classid=<?= $tableid ?>"><?= $classname ?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= $row['name'] ?></li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Data</li>
                             </ol>
                         </nav>
                         <!--頂部區域商品圖-小-->
@@ -257,24 +158,24 @@ if (empty($row)) {
                                 <div class="dtlQt-CL">
                                     <i class="fas fa-minus"></i>
                                     <select name="dtlQtSelec-CL" id="dtlQtSelec-CL">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
                                     </select>
                                     <i class="fas fa-plus"></i>
                                 </div>
                                 <div class="dtlDollor-CL">
-                                    售價 $<?= $row['price'] ?>
+                                    $ <?= $row['price'] ?>
                                 </div>
                             </div>
                         </div>
                         <!--加入追蹤清單與購物車-->
-                        <div class="dtlAddCar-CL" data-sid="<?= $row['sid'] ?>" data-tbid="<?= $tableid ?>">
-                            <button class="wBtnAddTrace btnShare dtlAddFollow-CL"><i class="far fa-heart shpHeart"></i> 加入追蹤清單</button>
+                        <div class="dtlAddCar-CL">
+                            <button class="wBtnAddTrace btnShare"><i class="far fa-heart shpHeart"></i> 加入追蹤清單</button>
                             <br>
-                            <button class="wBtnAddCar btnShare dtlAddCarBtn-CL"><i class="fas fa-shopping-cart"></i> 加入購物車</button>
+                            <button class="wBtnAddCar btnShare"><i class="fas fa-shopping-cart"></i> 加入購物車</button>
                         </div>
                     </div>
                 </div>
@@ -291,50 +192,36 @@ if (empty($row)) {
                             <!--商品輪播牆單頁內容-->
                             <div class="carousel-item active shpHotItemCaro-CL">
                                 <div class="row">
-                                    <?php foreach ($hotsalerow1 as $r) { ?>
-                                        <div class="col">
-                                            <a href="/Upick/web/product/dtl_page.php?pid=<?= $r['sid'] ?>&classid=<?= $tableid ?>" data-sid="<?= $r['sid'] ?>" data-tbid="<?= $tableid ?>">
-                                                <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
-                                                <p><?= $r['name'] ?></p>
-                                            </a>
+                                    <div class="col">
+                                        <a href="">
+                                            <img src="/Upick/images/item_01.png" alt="">
+                                            <p>Corsair HX1200 80Plus白金牌電源供應器白金牌電源供應器</p>
                                             <!--加入追蹤之愛心,購物車,金額-->
-                                            <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL"><?= $r['price'] ?></span></div>
-
-                                        </div>
-                                    <?php } ?>
+                                            <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL">8790</span></div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <img src="/Upick/images/item_01.png" alt="">
+                                        <p>Corsair HX1200 80Plus白金牌電源供應器白金牌電源供應器</p>
+                                        <!--加入追蹤之愛心,購物車,金額-->
+                                        <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL">8790</span></div>
+                                    </div>
+                                    <div class="col">
+                                        <img src="/Upick/images/item_01.png" alt="">
+                                        <p>Corsair HX1200 80Plus白金牌電源供應器白金牌電源供應器</p>
+                                        <!--加入追蹤之愛心,購物車,金額-->
+                                        <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL">8790</span></div>
+                                    </div>
+                                    <div class="col">
+                                        <img src="/Upick/images/item_01.png" alt="">
+                                        <p>Corsair HX1200 80Plus白金牌電源供應器白金牌電源供應器</p>
+                                        <!--加入追蹤之愛心,購物車,金額-->
+                                        <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL">8790</span></div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="carousel-item shpHotItemCaro-CL">
-                                <div class="row">
-                                    <?php foreach ($hotsalerow2 as $r) { ?>
-                                        <div class="col">
-                                            <a href="/Upick/web/product/dtl_page.php?pid=<?= $r['sid'] ?>&classid=<?= $tableid ?>" data-sid="<?= $r['sid'] ?>" data-tbid="<?= $tableid ?>">
-                                                <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
-                                                <p><?= $r['name'] ?></p>
-                                            </a>
-                                            <!--加入追蹤之愛心,購物車,金額-->
-                                            <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL"><?= $r['price'] ?></span></div>
-                                        </div>
-                                    <?php } ?>
-                                </div>
-
-                            </div>
-
-
-                            <div class="carousel-item shpHotItemCaro-CL">
-                                <div class="row">
-                                    <?php foreach ($hotsalerow3 as $r) { ?>
-                                        <div class="col">
-                                            <a href="/Upick/web/product/dtl_page.php?pid=<?= $r['sid'] ?>&classid=<?= $tableid ?>" data-sid="<?= $r['sid'] ?>" data-tbid="<?= $tableid ?>">
-                                                <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
-                                                <p><?= $r['name'] ?></p>
-                                            </a>
-                                            <!--加入追蹤之愛心,購物車,金額-->
-                                            <div class="shpHotCartInfo-CL"><i class="far fa-heart shpHeart-CL"></i><i class="fas fa-shopping-cart shpShopCar-CL"></i> <span class="shpItemDollor-CL"><?= $r['price'] ?></span></div>
-                                        </div>
-                                    <?php } ?>
-                                </div>
+                            <div class="carousel-item">
 
                             </div>
 
@@ -372,13 +259,99 @@ if (empty($row)) {
                             <h4><?= $row['name'] ?></h4>
                         </div>
                         <table>
-                            <?php foreach ($row as $key => $value) { ?>
-                                <tr>
-                                    <td><?= $key ?></td>
-                                    <td><?= $value ?></td>
-                                </tr>
-                            <?php } ?>
-
+                            <tr>
+                                <td>品牌</td>
+                                <td><?= isset($row['brand']) ? ($row['brand']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>名稱</td>
+                                <td><?= isset($row['name']) ? ($row['name']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>核心數</td>
+                                <td><?= isset($row['cores']) ? ($row['cores']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>執行緒數量</td>
+                                <td><?= isset($row['threads']) ? ($row['threads']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>型號</td>
+                                <td><?= isset($row['model']) ? ($row['model']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>系列</td>
+                                <td><?= isset($row['series']) ? ($row['series']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>處理器編號</td>
+                                <td><?= isset($row['processor number']) ? ($row['processor number']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>預設時脈(GHz)</td>
+                                <td><?= isset($row['base_frequency(GHz)']) ? ($row['base_frequency(GHz)']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>最大超頻(GHz)</td>
+                                <td><?= isset($row['max_turbo_frequency(GHz)']) ? ($row['max_turbo_frequency(GHz)']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>支援記憶體頻率(MHz)</td>
+                                <td><?= isset($row['support_memory_frequency(MHz)']) ? ($row['support_memory_frequency(MHz)']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>內建顯示晶片GPU</td>
+                                <td><?= isset($row['is_graphics']) ? ($row['is_graphics']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>內建顯示晶片GPU型號</td>
+                                <td><?= isset($row['processor_graphics']) ? ($row['processor_graphics']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>內建顯示晶片GPU頻率(MHz)</td>
+                                <td><?=
+                                    isset($row['processor_graphics_frequency']) ? ($row['processor_graphics_frequency']) : 'N/A'; ?></td>
+                            </tr>
+                            <tr>
+                                <td>晶片</td>
+                                <td><?= isset($row['chip']) ? ($row['chip']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>晶片組</td>
+                                <td><?= isset($row['chipset']) ? ($row['chipset']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>繪圖核心</td>
+                                <td><?= isset($row['graphics core']) ? ($row['graphics core']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>記憶體插槽數</td>
+                                <td><?= isset($row['number_memory solts']) ? ($row['number_memory solts']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>內建顯示支援</td>
+                                <td><?= isset($row['support_built-in display']) ? ($row['support_built-in display']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>主機板結構規格</td>
+                                <td><?= isset($row['vga_specification']) ? ($row['vga_specification']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>尺寸(長x寬)(mm)</td>
+                                <td><?= isset($row['size(L*W)']) ? ($row['size(L*W)']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>記憶體容量(GB)</td>
+                                <td><?= isset($row['memory capacity']) ? ($row['memory capacity']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>最大支援記憶體容量</td>
+                                <td><?= isset($row['max_support_memory capacity']) ? ($row['max_support_memory capacity']) : 'N/A' ?></td>
+                            </tr>
+                            <tr>
+                                <td>圖形記憶體類型</td>
+                                <td><?= isset($row['graphics memory_type']) ? ($row['graphics memory_type']) : 'N/A' ?></td>
+                            </tr>
 
 
 
@@ -404,8 +377,6 @@ if (empty($row)) {
 
     <!--SCRIPT-->
     <?php include __DIR__ . '/../../parts/scripts.php' ?>
-    <?php include __DIR__ . '/../../web/shopcar/cart-script.php' ?>
-    <?php include __DIR__ . '/../../web/member/follow-script.php' ?>
     <script>
         $(document).ready(function() {
             //手機版-小於1200則searchbar不出現
@@ -422,7 +393,7 @@ if (empty($row)) {
                 $('.navSearch-CL').css('display', 'block');
                 //searchBar下滑效果
                 setTimeout(function() {
-                    $('.navSearch-CL').css('transform', 'translateY(0vh)').css('transition', '0.6s')
+                    $('.navSearch-CL').css('transform', 'translateY(0vh)').css('transition', '1s')
                         .css('opacity', '1');
                 }, 1000);
 
@@ -528,93 +499,6 @@ if (empty($row)) {
             }, 500);
 
         });
-
-
-        //加入購物車
-        const addToCartBtn = $('.dtlAddCarBtn-CL');
-        addToCartBtn.click(function() {
-            const card = $(this).parent('.dtlAddCar-CL');
-            const sid = card.attr('data-sid');
-            const classid = card.attr('data-tbid');
-            const qty = document.getElementById("dtlQtSelec-CL").value;
-            $.get('/Upick/web/shopcar/cart-api.php', {
-                action: 'add',
-                sid,
-                classid,
-                qty
-            }, function(data) {
-                console.log(data);
-                showCartCount(data); // 更新選單上數量的提示
-            }, 'json');
-        })
-        //加入追蹤
-        const addToFollowtBtn = $('.dtlAddFollow-CL');
-        addToFollowtBtn.click(function() {
-            const card = $(this).parent('.dtlAddCar-CL');
-            const sid = card.attr('data-sid');
-            const classid = card.attr('data-tbid');
-            const qty = 1;
-            $.get('/Upick/web/member/follow-api.php', {
-                action: 'add',
-                sid,
-                classid,
-                qty
-            }, function(data) {
-                console.log(data);
-                showCartCount(data); // 更新選單上數量的提示
-            }, 'json');
-        })
-        //加入追蹤2
-        const addToFollowtBtn2 = $('.shpHeart-CL');
-        addToFollowtBtn2.click(function() {
-            const card = $(this).parent().prev('a');
-            const sid = card.attr('data-sid');
-            const classid = card.attr('data-tbid');
-            const qty = 1;
-            $.get('/Upick/web/member/follow-api.php', {
-                action: 'add',
-                sid,
-                classid,
-                qty
-            }, function(data) {
-                console.log(data);
-            }, 'json');
-        })
-
-        //手機版-加入購物車
-        const addToCartBtnPhone = $('.dtlAddShopCarPhoneBtn-CL');
-        addToCartBtnPhone.click(function() {
-            const card = $(this).closest('.dtlAddCarPhone-CL');
-            const sid = card.attr('data-sid');
-            const classid = card.attr('data-tbid');
-            const qty = 1;
-            $.get('/Upick/web/shopcar/cart-api.php', {
-                action: 'add',
-                sid,
-                classid,
-                qty
-            }, function(data) {
-                console.log(data);
-                showCartCount(data); // 更新選單上數量的提示
-            }, 'json');
-        })
-
-        //手機版-加入追蹤
-        const addToFollowPhone = $('.dtlAddFollowPhoneBtn-CL');
-        addToFollowPhone.click(function() {
-            const card = $(this).closest('.dtlAddCarPhone-CL');
-            const sid = card.attr('data-sid');
-            const classid = card.attr('data-tbid');
-            const qty = 1;
-            $.get('/Upick/web/member/follow-api.php', {
-                action: 'add',
-                sid,
-                classid,
-                qty
-            }, function(data) {
-                console.log(data);
-            }, 'json');
-        })
     </script>
 
 

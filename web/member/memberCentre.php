@@ -1,3 +1,10 @@
+<?php require __DIR__.'/../../__connect_db.php';
+
+define('WEB_ROOT', '/UPICK');
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +15,7 @@
     <title>會員中心</title>
     <!--檔頭外掛-->
     <?php include __DIR__ . '/../../parts/html_head.php' ?>
+    <?php include __DIR__ . '/../../parts/html_navbar_phone.php' ?>
     <!-- memberCentre.css -->
     <link rel="stylesheet" href="/Upick/css/memberCentre.css">
 </head>
@@ -67,7 +75,10 @@
             </div>
         </div>
     </div>
-
+    <!--區隔撐開頁尾的空間-->
+    <div class="shpFooterSpace-CL"></div>
+    <!--頁尾-->
+    <?php include __DIR__ . '/../../parts/html_footer.php' ?>
     <!--SCRIPT-->
     <?php include __DIR__ . '/../../parts/scripts.php' ?>
 

@@ -8,23 +8,31 @@
     <title>UPICK電腦零件購物網-購物車</title>
 
     <link rel="stylesheet" href="/Upick/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Upick/css/shopcart_infor_stepbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="/Upick/css/style_navbar.css">
+    <link rel="stylesheet" href="/Upick/css/style_navbar_phone.css">
+
+
+    <link rel="stylesheet" href="/Upick/css/shopcart_infor_stepbar.css">
     <link rel="stylesheet" href="/Upick/css/shopcart_infor.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <!--navbar style-->
-    <link rel="stylesheet" href="/Upick/css/style_navbar.css">
+
     <!--footer style-->
     <link rel="stylesheet" href="/Upick/css/style_footer.css">
 
+    <style>
+        .navSearch-CL {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <?php include __DIR__ . '/../../parts/html_navbar.php' ?>
+    <?php include __DIR__ . '/../../parts/html_navbar_phone.php' ?>
     <!-- 步驟攔 請搭配shopcart_stepbar.css -->
     <div class="container carStepContainer_ZY">
         <div class="carStepRow_ZY">
@@ -169,24 +177,21 @@
                 <div class="carInputContainer_ZY col-12 col-lg-6 ">
                     <p>姓名</p>
                     <div class="form-group">
-                        <input type="text" class="input" name="name" placeholder="姓名" data-error=" 姓名尚未填寫或格式有誤"
-                            required="required" value="">
+                        <input type="text" class="input" name="name" placeholder="姓名" data-error=" 姓名尚未填寫或格式有誤" required="required" value="">
                         <div class="help-block with-errors "></div>
                     </div>
                 </div>
                 <div class="carInputContainer_ZY  col-12 col-lg-6">
                     <p>信箱</p>
                     <div class="form-group">
-                        <input type="email" class="input" name="email" placeholder="example123@gmail.com"
-                            data-error="信箱尚未填寫或格式有誤" required="required">
+                        <input type="email" class="input" name="email" placeholder="example123@gmail.com" data-error="信箱尚未填寫或格式有誤" required="required">
                         <div class="help-block with-errors "></div>
                     </div>
                 </div>
                 <div class="carInputContainer_ZY  col-12 col-lg-6">
                     <p>手機</p>
                     <div class="form-group">
-                        <input type="text" class="input" name="moblie" placeholder="手機" data-error="手機號碼尚未填寫或格式有誤"
-                            required="required" pattern="09\d{2}-?\d{3}-?\d{3}">
+                        <input type="text" class="input" name="moblie" placeholder="手機" data-error="手機號碼尚未填寫或格式有誤" required="required" pattern="09\d{2}-?\d{3}-?\d{3}">
                         <div class="help-block with-errors "></div>
                     </div>
                 </div>
@@ -194,16 +199,14 @@
                 <div class="carInputContainer_ZY  col-12 col-lg-6">
                     <p>市話</p>
                     <div class="form-group">
-                        <input type="text" class="input" placeholder="市話" data-error="市話號碼格式有誤"
-                            pattern="0\d{1,2}-?(\d{6,8})(#\d{1,5}){0,1}">
+                        <input type="text" class="input" placeholder="市話" data-error="市話號碼格式有誤" pattern="0\d{1,2}-?(\d{6,8})(#\d{1,5}){0,1}">
                         <div class="help-block with-errors "></div>
                     </div>
                 </div>
                 <div class="carInputContainer_ZY  col-12 col-lg-12">
                     <p>配送地址</p>
                     <div class="form-group">
-                        <input type="text" class="input" placeholder="台北市文山區信義路四段123號" data-error="請填寫正確的配送地址"
-                            required="required" minlength="13">
+                        <input type="text" class="input" placeholder="台北市文山區信義路四段123號" data-error="請填寫正確的配送地址" required="required" minlength="13">
                         <div class="help-block with-errors "></div>
                     </div>
                 </div>
@@ -231,8 +234,7 @@
                         <div class="carInforInputBox_ZY">
                             <div>信用卡號碼</div>
                             <div class="form-group">
-                                <input type="tel" placeholder="請輸入16碼信用卡號" required class="CarNumber_ZY" maxlength="16"
-                                    data-error="信用卡尚未填寫或格式有誤" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" required="required">
+                                <input type="tel" placeholder="請輸入16碼信用卡號" required class="CarNumber_ZY" maxlength="16" data-error="信用卡尚未填寫或格式有誤" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" required="required">
                                 <div class="help-block with-errors "></div>
                             </div>
                         </div>
@@ -240,8 +242,7 @@
                             <div class="carInforInputNumber_ZY ">
                                 <div>驗證碼</div>
                                 <div class="form-group">
-                                    <input type="tel" placeholder="123" required class=" CarCsvNumber_ZY " maxlength="3"
-                                        data-error="格式有誤" pattern="\d{3}" required="required">
+                                    <input type="tel" placeholder="123" required class=" CarCsvNumber_ZY " maxlength="3" data-error="格式有誤" pattern="\d{3}" required="required">
                                     <div class="help-block with-errors "></div>
                                 </div>
                             </div>
@@ -328,16 +329,14 @@
                         <input type="radio" name="invoiceinfor" id="mobile" value="mobileID">
 
                         <label for="mobile">手機載具</label>
-                        <input type="tel" placeholder="/Y1+-JM2" id="mobilenum" maxlength="8" data-error="格式有誤"
-                            class="mobilenum invoiceinforhideZY" required="required">
+                        <input type="tel" placeholder="請輸入7碼英數字" id="mobilenum" maxlength="7" data-error="格式有誤" class="mobilenum invoiceinforhideZY" required="required">
                         <div class="help-block with-errors"></div>
 
                     </div>
                     <div class="carInvoiceInforItem_ZY form-group">
-                        <input type="radio" name="invoiceinfor" id="DigitalCertificate" value="DigitalCertificateID">
+                        <input type="radio" placeholder="請輸入16碼英數字" name="invoiceinfor" id="DigitalCertificate" value="DigitalCertificateID">
                         <label for="DigitalCertificate">自然人憑證</label>
-                        <input type="tel" id="DigitalCertificatenum" class="DigitalCertificatenum invoiceinforhideZY"
-                            maxlength="16" data-error="格式有誤">
+                        <input type="tel" placeholder="請輸入16碼英數字" id="DigitalCertificatenum" class="DigitalCertificatenum invoiceinforhideZY" maxlength="16" data-error="格式有誤">
                         <div class="help-block with-errors"></div>
                     </div>
 
@@ -393,21 +392,20 @@
 
 
     <!--區隔撐開頁尾的空間-->
-    <div class="shpFooterSpace-CL"></div>
+
     <!--頁尾-->
     <?php include __DIR__ . '/../../parts/html_footer.php' ?>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-    <script src="../shopcart_infor/shiocar_infor.js"></script>
+    <!-- <script src="../shopcart_infor/shiocar_infor.js"></script> -->
+    <script src="/../Upick/js/shiocar_infor.js"></script>
+
     <!-- <script>
         $('#carRegister_ZY').validator().on('submit', function (e) {
             if (e.isDefaultPrevented()) { // 未驗證通過 則不處理

@@ -1,3 +1,30 @@
+<?php require __DIR__.'/../../__connect_db.php';
+
+define('WEB_ROOT', '/UPICK');
+session_start();
+
+$sql = "SELECT * FROM orders o JOIN order_details d ON o.`id` = d.`order_id` WHERE `email`=?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    $_SESSION['loginUser'],
+]);
+
+if($stmt->rowCount()){
+    $row = $stmt->fetchAll();
+};
+
+$sq2 = "SELECT `id` FROM orders WHERE `email`=?";
+$stmt2 = $pdo->prepare($sq2);
+$stmt2->execute([
+    $_SESSION['loginUser'],
+]);
+
+if($stmt2->rowCount()){
+    $row2 = $stmt2->fetch();
+};
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +35,7 @@
     <title>訂單明細</title>
     <!--檔頭外掛-->
     <?php include __DIR__ . '/../../parts/html_head.php' ?>
+    <?php include __DIR__ . '/../../parts/html_navbar_phone.php' ?>
     <!-- memberOderDetail.css -->
     <link rel="stylesheet" href="/Upick/css/memberOderDetail.css">
 </head>
@@ -50,7 +78,7 @@
                 <div class="memWebDetail_HC">
                     <div class="memSerialNumTitle_HC">
                         <h4>訂單編號：</h4>
-                        <h4 class="memSerialNum_HC">1006127192</h4>
+                        <h4 class="memSerialNum_HC">100612719<?= htmlentities($row2['id']) ?></h4>
                     </div>
                     <table id="memWebTable_HC">
                         <thead>
@@ -62,46 +90,33 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php foreach ($row as $oderR): ?>
                             <tr>
                                 <!-- 商品名稱 -->
                                 <td class="memProductNam_HC">
-                                    <p class="memProductTitle_HC">HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16
+                                    <p class="memProductTitle_HC"><?= htmlentities($oderR['name']) ?>
                                     </p>
                                 </td>
                                 <!-- 單價 -->
                                 <td>
-                                    <p class="memUPrice_HC">$24,798</p>
+                                    <p class="memUPrice_HC">$<?= htmlentities($oderR['price']) ?></p>
                                 </td>
                                 <!-- 數量 -->
                                 <td>
-                                    <p class="memQuantity_HC">1</p>
+                                    <p class="memQuantity_HC"><?= htmlentities($oderR['quantity']) ?></p>
                                 </td>
                                 <!-- 小計 -->
                                 <td>
-                                    <p class="memSubtotal_HC">$24,798</p>
+                                    <p class="memSubtotal_HC">$13899</p>
                                 </td>
                             </tr>
-                            <!-- 展示用可刪除↓ -->
-                            <tr>
-                                <td class="memProductNam_HC">
-                                    <p>HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                                </td>
-                                <td>
-                                    <p>$24,798</p>
-                                </td>
-                                <td>
-                                    <p>1</p>
-                                </td>
-                                <td>
-                                    <p>$24,798</p>
-                                </td>
-                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                     <div class="memTotal_HC">
                         <p>訂單總額：</p>
                         <!-- 手機 訂單總額 -->
-                        <p class="memDetailPrice_HC memOrderTotal_HC">$24,798</p>
+                        <p class="memDetailPrice_HC memOrderTotal_HC">$13899</p>
                     </div>
                     <button onclick="self.location.href='/Upick/web/member/memberOrder.php'"
                         class="wBtnNGr memDetailBtnShare_HC">回訂單列表</button>
@@ -137,7 +152,7 @@
                         </ul>
                         <ul class="memDetailCon_HC">
                             <li>
-                                <p class="memBuyDay_HC">2021-05-01</p>
+                                <p class="memBuyDay_HC">2021-06-08</p>
                             </li>
                             <li>
                                 <p class="memOrderSta_HC">處理中</p>
@@ -146,13 +161,13 @@
                                 <p class="memToteSta_HC">-</p>
                             </li>
                             <li>
-                                <p class="memTote_HC">宅配</p>
+                                <p class="memTote_HC">到店取貨</p>
                             </li>
                             <li>
-                                <p class="memPayWay_HC">宅配代收</p>
+                                <p class="memPayWay_HC">信用卡</p>
                             </li>
                             <li>
-                                <p class="memOrderTotal_HC">$24,798</p>
+                                <p class="memOrderTotal_HC">$13899</p>
                             </li>
                             <li>
                                 <a href="/Upick/web/member/memberQA.php">聯絡客服</a>
@@ -167,20 +182,20 @@
                             <p class="memProductTitle_HC">HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
                             <ul class="memDisplayMe_HC">
                                 <li>
-                                    <p class="memUPrice_HC">單價：$2,999</p>
+                                    <p class="memUPrice_HC">單價：$13899</p>
                                 </li>
                                 <li>
                                     <p class="memQuantity_HC">數量：1</p>
                                 </li>
                                 <li>
-                                    <p class="memSubtotal_HC">小計：$2,999</p>
+                                    <p class="memSubtotal_HC">小計：$13899</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="memDtailTitleReverse_HC">
                         <p>訂單總額：</p>
-                        <p class="memPrice_HC memOrderTotal_HC">$2,999</p>
+                        <p class="memPrice_HC memOrderTotal_HC">$13899</p>
                     </div>
 
                 </div>
@@ -199,6 +214,24 @@
 <!--SCRIPT-->
 <?php include __DIR__ . '/../../parts/scripts.php' ?>
 <script>
+$(document).ready(function (){
+    GetMemberOrderDetail();
+});
+
+function GetMemberOrderDetail(){
+    $.ajax({
+        type: POST,
+        url: "order-details-api.php",
+        dataType: "json",
+        success:function(data){
+            console.log("OK");
+        },
+        error: function(data) {
+            console.log("NOK");
+        }
+    });
+}
+
 function topMove() {
     window.scrollTo({
         top: 0,

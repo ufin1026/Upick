@@ -8,23 +8,31 @@
     <title>UPICK電腦零件購物網-購物車</title>
 
     <link rel="stylesheet" href="/Upick/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--navbar style-->
+    <link rel="stylesheet" href="/Upick/css/style_navbar.css">
+    <link rel="stylesheet" href="/Upick/css/style_navbar_phone.css">
     <link rel="stylesheet" href="/Upick/css/shopcart_finish_stepbar.css">
 
     <link rel="stylesheet" href="/Upick/css/shopcart_finish.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-    <!--navbar style-->
-    <link rel="stylesheet" href="/Upick/css/style_navbar.css">
     <!--footer style-->
     <link rel="stylesheet" href="/Upick/css/style_footer.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+    <style>
+        .navSearch-CL {
+            display: none;
+        }
+    </style>
 
 </head>
 
 <body>
     <?php include __DIR__ . '/../../parts/html_navbar.php' ?>
+    <?php include __DIR__ . '/../../parts/html_navbar_phone.php' ?>
     <!-- 步驟攔 請搭配shopcart_stepbar.css -->
     <div class="container carStepContainer_ZY">
         <div class="carStepRow_ZY">
@@ -61,10 +69,8 @@
             <p>或到會員中心 > 訂單查詢查看最新的物流進度</p>
         </div>
         <div class="row carFinishContainerBtnGroup_ZY">
-            <button class="carFinishContainerBtn_ZY"><i class="fas fa-chevron-left"></i><i
-                    class="fas fa-chevron-left"></i>繼續購物</button>
-            <button class="carFinishContainerBtn_ZY"></i>前往訂單<i class="fas fa-chevron-right"></i><i
-                    class="fas fa-chevron-right"></i></button>
+            <button class="carFinishContainerBtn_ZY"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>繼續購物</button>
+            <button class="carFinishContainerBtn_ZY"></i>前往訂單<i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="row carFinishInforContainer_ZY">
             <div class="row carRecipientInforBox_ZY">
@@ -171,18 +177,15 @@
     </div>
 
     <!--區隔撐開頁尾的空間-->
-    <div class="shpFooterSpace-CL"></div>
+    <!-- <div class="shpFooterSpace-CL"></div> -->
     <!--頁尾-->
     <?php include __DIR__ . '/../../parts/html_footer.php' ?>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
     <script src="../shopcart_infor/shiocar_infor.js"></script>

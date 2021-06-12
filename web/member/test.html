@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>使用者登陸</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/Login-Reg.css"> -->
+</head>
+
+<body>
+    <h2 id="Reg-text">使用者登陸</h2>
+    <div id="Form-con">
+        <form id="form1" onsubmit="return false" action="##" method="post">
+            <input type="text" name="email" class="inputStyle" placeholder="請輸入賬號"><br/>
+            <input type="password" name="password" class="inputStyle" placeholder="請輸入密碼"><br/>
+            <input type="submit" class="btnStyle" value="登陸" onclick="LoginUser()">
+    </div>
+    <div id="Result"></div>
+    </form>
+</body>
+<!-- AJAX提交表單 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+    function LoginUser() {
+        $.ajax({
+            type: "POST", //方法
+            url: "login-api.php", //表單接收url
+            data: $('#form1').serialize(),
+            dataType: "json",
+            success: function(data) {
+                console.log("OK")
+                var result = document.getElementById("Result");
+                result.innerHTML = data.success;
+                if (data.success == "true") {
+                    result.innerHTML = "登陸成功";
+                } else if (data.success == "fail") {
+                    result.innerHTML = "登陸失敗，賬號或密碼錯誤";
+                }
+            },
+            error: function(data) {
+                console.log("NOK")
+            }
+        });
+    }
+</script>
+
+</html>
