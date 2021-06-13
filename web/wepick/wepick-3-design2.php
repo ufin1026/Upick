@@ -4,23 +4,25 @@ require __DIR__ . '/../../__connect_db.php';
 define('WEB_ROOT', '/UPICK');
 session_start();
 
-$cpuid = isset($_GET['classid']) ? ($_GET['classid']) : "";
-$d_cpu = "SELECT * FROM $cpuid WHERE `level` = '中階'";
+$tableid = isset($_GET['classid']) ? ($_GET['classid']) : "";
+
+if ($tableid == '01cpu') {
+    $between1 = 1;
+    $between2 = 3;
+}
+
+else {
+    $between1 = "";
+    $between2 = "";
+}
+
+$d_cpu = "SELECT * FROM $tableid WHERE id BETWEEN $between1 AND $between2";
 $d_cpu1 = $pdo->query($d_cpu)->fetchAll();
 
-$mbid = '02mb';
-$d_mb = "SELECT * FROM 02mb WHERE `level` = '中階'";
-$d_mb1 = $pdo->query($d_mb)->fetchAll();
-
-$ramid = '04ram';
-$d_ram = "SELECT * FROM 04ram WHERE single_capacity = '8G'";
-$stmt2 = $pdo->query($d_ram);
-$d_ram1 = $stmt2->fetchAll();
-
-$hddid = '05hdd';
-$d_hdd = "SELECT * FROM 05hdd WHERE capacity = '2TB'";
-$d_hdd1 = $pdo->query($d_hdd)->fetchAll();
-
+//取得02mb品牌名稱
+$mb2 = "SELECT `level` FROM 02mb WHERE brand = 'ASUS華碩'";
+$stmt2 = $pdo->query($mb2);
+$row_mb2 = $stmt2->fetchall();
 ?>
 
 
@@ -177,55 +179,12 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
             <!-- 商品選項 -->
             <div class="col-lg-8 d-flex flex-nowrap overflow-hidden product-index">
                 <!-- CPU -->
-                <div class="wp-slide cpu" id="wp-slide">
+                <div class="col-lg-12 wp-slide">
                     <div class="list-unstyled d-flex wp-wrap">
-                        <?php foreach ($d_cpu1 as $c) { ?>
+                        <?php foreach ($d_cpu1 as $r) { ?>
                         <div class="col-lg-4 col-sm-12">
-                            <div class="wp-row" data-sid="<?= $c['sid'] ?>">
-                                <img src="<?= WEB_ROOT ?>/images/product/<?= $cpuid ?>/<?= $c['imgs'] ?>.jpg" alt="">
-                                <h5 class="wp-2-producttitle"><?= $c['brand'] ?></h5>
-                                <div class="product-info">
-                                    <p>
-                                    <?= $c['name'] ?>
-                                    </p>
-                                </div>
-
-                                <h5 class="price">$<?= $c['price'] ?></h5>
-                                <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
-                            </div>
-                            </div>
-                    <?php } ?>  
-                    </div>
-                </div>
-
-                <!-- MB -->
-                <div class="col-lg-12 wp-slide mb">
-                <div class="list-unstyled d-flex wp-wrap ">
-                        <?php foreach ($d_mb1 as $m) { ?>
-                        <div class="col-lg-4 col-sm-12">
-                            <div class="wp-row">
-                                <img src="<?= WEB_ROOT ?>/images/product/<?= $mbid ?>/<?= $m['imgs'] ?>.jpg" alt="">
-                                <h5 class="wp-2-producttitle"><?= $m['brand'] ?></h5>
-                                <div class="product-info">
-                                    <p>
-                                    <?= $m['name'] ?>
-                                    </p>
-                                </div>
-
-                                <h5 class="price">$<?= $m['price'] ?></h5>
-                                <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
-                            </div>
-                            </div>
-                    <?php } ?>  
-                    </div>
-                </div>
-                <!-- RAM -->
-                <div class="col-lg-12 wp-slide ram">
-                <div class="list-unstyled d-flex wp-wrap ">
-                        <?php foreach ($d_ram1 as $r) { ?>
-                        <div class="col-lg-4 col-sm-12">
-                            <div class="wp-row">
-                                <img src="<?= WEB_ROOT ?>/images/product/<?= $ramid ?>/<?= $r['imgs'] ?>.jpg" alt="">
+                            <div class="wp-row" data-sid="<?= $r['sid'] ?>">
+                                <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
                                 <h5 class="wp-2-producttitle"><?= $r['brand'] ?></h5>
                                 <div class="product-info">
                                     <p>
@@ -240,25 +199,102 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
                     <?php } ?>  
                     </div>
                 </div>
-                <!-- HDD -->
-                <div class="col-lg-12 wp-slide hdd">
+
+                <!-- MB -->
+                <div class="col-lg-12 wp-slide">
                 <div class="list-unstyled d-flex wp-wrap ">
-                        <?php foreach ($d_hdd1 as $h) { ?>
+                        <?php foreach ($d_cpu1 as $r) { ?>
                         <div class="col-lg-4 col-sm-12">
                             <div class="wp-row">
-                                <img src="<?= WEB_ROOT ?>/images/product/<?= $hddid ?>/<?= $h['imgs'] ?>.jpg" alt="">
-                                <h5 class="wp-2-producttitle"><?= $h['brand'] ?></h5>
+                                <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
+                                <h5 class="wp-2-producttitle"><?= $r['brand'] ?></h5>
                                 <div class="product-info">
                                     <p>
-                                    <?= $h['name'] ?>
+                                    <?= $r['name'] ?>
                                     </p>
                                 </div>
 
-                                <h5 class="price">$<?= $h['price'] ?></h5>
+                                <h5 class="price">$<?= $r['price'] ?></h5>
                                 <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                             </div>
                             </div>
                     <?php } ?>  
+                    </div>
+                </div>
+                <!-- RAM -->
+                <div class="col-lg-12 wp-slide">
+                    <div class="wp-row col-lg-4 col-sm-12 ">
+                        <img src="/Upick/images/wpimg/AMD01.jpg" alt="">
+                        <h5>AMD Athlon™ 3000G</h5>
+                        <div class="product-info">
+                            <p>
+                                333333333
+                            </p>
+                        </div>
+
+                        <h5 class="price">$1000</h5>
+                        <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 wp-row">
+                        <img src="/Upick/images/wpimg/AMD01.jpg" alt="">
+                        <h5>AMD Athlon™ 3000G</h5>
+                        <div class="product-info">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,adipisicin
+                            </p>
+                        </div>
+
+                        <h5 class="price">$1000</h5>
+                        <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
+                    </div>
+                    <div class="wp-row col-lg-4 col-sm-12">
+                        <img src="/Upick/images/wpimg/AMD01.jpg" alt="">
+                        <h5>AMD Athlon™ 3000G</h5>
+                        <div class="product-info">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,adipisicin
+                            </p>
+                        </div>
+                        <h5 class="price">$1000</h5>
+                        <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
+                    </div>
+                </div>
+                <!-- HDD -->
+                <div class="col-lg-12 wp-slide">
+                    <div class="wp-row col-lg-4 col-sm-12 ">
+                        <img src="/Upick/images/wpimg/AMD01.jpg" alt="">
+                        <h5>AMD Athlon™ 3000G</h5>
+                        <div class="product-info">
+                            <p>
+                                444444
+                            </p>
+                        </div>
+
+                        <h5 class="price">$1000</h5>
+                        <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 wp-row">
+                        <img src="/Upick/images/wpimg/AMD01.jpg" alt="">
+                        <h5>AMD Athlon™ 3000G</h5>
+                        <div class="product-info">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,adipisicin
+                            </p>
+                        </div>
+
+                        <h5 class="price">$1000</h5>
+                        <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
+                    </div>
+                    <div class="wp-row col-lg-4 col-sm-12">
+                        <img src="/Upick/images/wpimg/AMD01.jpg" alt="">
+                        <h5>AMD Athlon™ 3000G</h5>
+                        <div class="product-info">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,adipisicin
+                            </p>
+                        </div>
+                        <h5 class="price">$1000</h5>
+                        <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                 </div>
                 <!-- SSD -->
@@ -534,7 +570,6 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
     <script>
     let nowItem = 0;
     // 下一步
-
     $('.btn-next').click(function() {
         if (nowItem < 9) {
             console.log(nowItem);
@@ -552,9 +587,7 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
                 'title-1');
             // 商品內容
             $('.wp-slide').css({
-                'right': '+=700px'
-
-                $("#wp-slide").append($(wp_price).text());
+                'right': '+=100%'
             })
         } else false;
     })
@@ -576,7 +609,7 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
             $('.wp-point').eq(nowItem).nextAll().children('.title.title-0').removeClass('title-0');
             // 商品內容頁
             $('.wp-slide').css({
-                'right': '-=700px'
+                'right': '-=100%'
             })
         } else false;
     })
@@ -586,7 +619,6 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
     // });
     // 選擇後新增li
     $(document).on('click', '#wp-btn-product', function () {
-
         $("#wpList").empty();
         $("#price").empty();
 
@@ -605,8 +637,6 @@ $d_hdd1 = $pdo->query($d_hdd)->fetchAll();
 
 $("#price").append($(wp_price).text());
         })
-
-
     </script>
 </body>
 </html>

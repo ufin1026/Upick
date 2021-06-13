@@ -1,4 +1,24 @@
 
+/* 箭頭 */
+.arrow {
+    font-size: 28px;
+    position: absolute;
+    transition: .3s;
+    z-index: 10;
+    color: #383E44;
+}
+
+.left-arrow {
+    top: 50%;
+    left: 0%;
+}
+
+.right-arrow {
+
+    top: 50%;
+    right: 0%;
+}
+
 /* 進度條 */
 #wp-progressBar {
     width: 1000px;
@@ -144,11 +164,10 @@
     margin: 0 auto;
     overflow: hidden;
     display: flex;
-    flex-wrap: nowrap;
 }
 
 .wp-row {
-    /* width: 220px; */
+    width: 200px;
     height: 500px;
     background-color: #f5f6f8;
     padding: 10px;
