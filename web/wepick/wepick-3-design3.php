@@ -65,6 +65,10 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
     <!-- style -->
     <style>
     /* 卡片 */
+    .price{
+padding-right: 0;
+}
+
     .wp-card {
             background-color: #FF98C930;
         }
@@ -211,7 +215,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $cpu['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $cpu['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $cpu['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -229,7 +233,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $mb['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $mb['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $mb['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -247,7 +251,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $ram['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $ram['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $ram['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -265,7 +269,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $hdd['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $hdd['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $hdd['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -283,7 +287,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $ssd['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $ssd['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $ssd['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -301,7 +305,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $vga['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $vga['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $vga['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -319,7 +323,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $case['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $case['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $case['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -337,7 +341,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $power['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $power['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $power['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -355,7 +359,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $radiator['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $radiator['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $radiator['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -373,7 +377,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                             <?= $add['name'] ?>
                             </p>
                         </div>
-                        <h5 class="price">$<?= $add['price'] ?></h5>
+                        <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $add['price'] ?></h5>
                         <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                     </div>
                     </div>
@@ -400,7 +404,7 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
                         <h5>
                             總價
                             <span class="price total-price" id="price">
-                                $0
+                            <i class="fas fa-dollar-sign"></i>0
                             </span>
                         </h5>
                     </div>
@@ -500,27 +504,27 @@ console.log(none_selector);
         // console.log('hi',{sid, qty }, row.find('.card-title').text() )
                
         let wp_price = $(this).prevAll()[0];      
-            console.log($(this).prevAll());
+            console.log(Number($(wp_price).text()));
+            let val_price = Number($(wp_price).text());
+
             let wp_name = $(this).prevAll()[1];
             // console.log($(wp_name).contents()[1].innerText);
 
             if (none_selector){
             $("#wpList div:last").remove();
-            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto">'+$(wp_price).text()+'</h5></div >'
+            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto"><i class="fas fa-dollar-sign"></i>'+$(wp_price).text()+'</h5></div >'
                 );   
             console.log('if',none_selector);
-           
-            
+                       
         }else{
             // 選擇之後變為TRUE
-            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto">'+$(wp_price).text()+'</h5></div >'
+            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto"><i class="fas fa-dollar-sign"></i>'+$(wp_price).text()+'</h5></div >'
                 );         
             none_selector = true;
-              console.log('else',none_selector );
-            
+              console.log('else',none_selector );           
         }
 
-        $("#price").append($(wp_price).text());
+        $("#price").append('<i class="fas fa-dollar-sign"></i>'+$(wp_price).text());
         
         })
     </script>

@@ -38,8 +38,12 @@ if(! isset($_SESSION))
     <!-- style -->
     <style>
        
-
-
+/* .fa-dollar-sign{
+    font-size: 10px;
+} */
+.price{
+padding-right: 0;
+}
 
 
 .wp-card {
@@ -90,7 +94,7 @@ if(! isset($_SESSION))
                                     </p>
                                 </div>
 
-                                <h5 class="price">$<?= $r['price'] ?></h5>
+                                <h5 class="price"><i class="fas fa-dollar-sign"></i><?= $r['price'] ?></h5>
                                 <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                             </div>
                             </div>
@@ -108,8 +112,8 @@ if(! isset($_SESSION))
                     <div class="totalPrice">
                         <h5>
                             總價
-                            <span class="price" id="price">
-                                $0
+                            <span class="price" id="price"><i class="fas fa-dollar-sign"></i>
+                                0
                             </span>
                         </h5>
                     </div>
@@ -146,9 +150,9 @@ if(! isset($_SESSION))
             let wp_name = $(this).prevAll()[1];
             console.log($(wp_name).contents()[1].innerText);
 
-            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto">'+$(wp_price).text()+'</h5></div >');
+            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto"><i class="fas fa-dollar-sign"></i>'+$(wp_price).text()+'</h5></div >');
 
-$("#price").append($(wp_price).text());
+$("#price").append('<i class="fas fa-dollar-sign"></i>'+$(wp_price).text());
           
         })
 
