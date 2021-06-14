@@ -492,9 +492,9 @@ var none_selector = false;
 // 還沒選擇的為False
 var none_selector = false;
 console.log(none_selector);
-
+var totalPrice = Number(0);
     $(document).on('click', '#wp-btn-product', function () {
-       
+totalPrice = totalPrice + val_price;       
         $("#price").empty();
 
         const row = $(this).closest('.wp-row');
@@ -504,11 +504,17 @@ console.log(none_selector);
         // console.log('hi',{sid, qty }, row.find('.card-title').text() )
                
         let wp_price = $(this).prevAll()[0];      
-            console.log(Number($(wp_price).text()));
+            // console.log(Number($(wp_price).text()));
+            
             let val_price = Number($(wp_price).text());
-
             let wp_name = $(this).prevAll()[1];
             // console.log($(wp_name).contents()[1].innerText);
+
+
+// totalPrice = val_price;
+console.log(totalPrice);
+
+
 
             if (none_selector){
             $("#wpList div:last").remove();
@@ -521,7 +527,8 @@ console.log(none_selector);
             $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto"><i class="fas fa-dollar-sign"></i>'+$(wp_price).text()+'</h5></div >'
                 );         
             none_selector = true;
-              console.log('else',none_selector );           
+              console.log('else',none_selector );  
+                       
         }
 
         $("#price").append('<i class="fas fa-dollar-sign"></i>'+$(wp_price).text());

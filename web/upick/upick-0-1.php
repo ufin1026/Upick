@@ -4,54 +4,53 @@ require __DIR__ . '/../../__connect_db.php';
 define('WEB_ROOT', '/UPICK');
 session_start();
 
+//取得17document_com品牌名稱
+$computer1 = "SELECT * FROM 17document_com " ;
+$row_computer = $pdo->query($computer1)->fetchall();
+
 //取得01cpu品牌名稱
-$cpu1 = "SELECT `brand` FROM 01cpu GROUP BY brand";
-$stmt1 = $pdo->query($cpu1);
-$row_cpu = $stmt1->fetchall();
+$cpu1 = "SELECT * FROM 01cpu " ;
+$row_cpu = $pdo->query($cpu1)->fetchall();
 
 //取得02mb品牌名稱
-$mb1 = "SELECT `brand` FROM 02mb GROUP BY brand";
-$stmt2 = $pdo->query($mb1);
-$row_mb = $stmt2->fetchall();
-
-$mb2 = "SELECT `name`,`price`  FROM 02mb WHERE brand = 'ASUS華碩'";
-$stmt2 = $pdo->query($mb2);
-$row_mb2 = $stmt2->fetchall();
+$mb1 = "SELECT * FROM 02mb ";
+$row_mb = $pdo->query($mb1)->fetchall();
 
 //取得03vga品牌名稱
-$vga1 = "SELECT `brand` FROM 03vga GROUP BY brand";
-$stmt3 = $pdo->query($vga1);
-$row_vga = $stmt3->fetchall();
+$vga1 = "SELECT * FROM 03vga ";
+$row_vga = $pdo->query($vga1)->fetchall();
 
 //取得04ram品牌名稱
-$vga1 = "SELECT `brand` FROM 04ram GROUP BY brand";
-$stmt4 = $pdo->query($vga1);
-$row_ram = $stmt4->fetchall();
+$ram1 = "SELECT * FROM 04ram ";
+$row_ram = $pdo->query($ram1)->fetchall();
 
 //取得05hdd品牌名稱
-$vga1 = "SELECT `brand` FROM 05hdd GROUP BY brand";
-$stmt5 = $pdo->query($vga1);
-$row_hdd = $stmt5->fetchall();
+$hdd1 = "SELECT * FROM 05hdd ";
+$row_hdd = $pdo->query($hdd1)->fetchall();
 
 //取得06ssd品牌名稱
-$vga1 = "SELECT `brand` FROM 06ssd GROUP BY brand";
-$stmt6 = $pdo->query($vga1);
-$row_ssd = $stmt6->fetchall();
+$ssd1 = "SELECT * FROM 06ssd ";
+$row_ssd = $pdo->query($ssd1)->fetchall();
 
 //取得07computercase品牌名稱
-$vga1 = "SELECT `brand` FROM 07computercase GROUP BY brand";
-$stmt7 = $pdo->query($vga1);
-$row_case = $stmt7->fetchall();
+$case1 = "SELECT * FROM 07computercase ";
+$row_case = $pdo->query($case1)->fetchall();
 
 //取得08powersupply品牌名稱
-$vga1 = "SELECT `brand` FROM 08powersupply GROUP BY brand";
-$stmt8 = $pdo->query($vga1);
-$row_power = $stmt8->fetchall();
+$power1 = "SELECT * FROM 08powersupply ";
+$row_power = $pdo->query($power1)->fetchall();
 
 //取得10radiator品牌名稱
-$vga1 = "SELECT `brand` FROM 08powersupply GROUP BY brand";
-$stmt8 = $pdo->query($vga1);
-$row_power = $stmt8->fetchall();
+$radiator1 = "SELECT * FROM 10radiator ";
+$row_radiator = $pdo->query($radiator1)->fetchall();
+
+//取得11thermalgrease品牌名稱
+$thermalgrease1 = "SELECT * FROM 11thermalgrease ";
+$row_thermalgrease = $pdo->query($thermalgrease1)->fetchall();
+
+//取得13watercooled品牌名稱
+$watercooled1 = "SELECT * FROM 13watercooled ";
+$row_watercooled = $pdo->query($watercooled1)->fetchall();
 
 
 ?>
@@ -83,6 +82,20 @@ $row_power = $stmt8->fetchall();
             position: fixed;
             z-index: 5;
         }
+
+        .select .option {
+    padding: 5px 10px;
+}
+
+.select .optList{
+    max-height: 300px;
+}
+
+.product-option {
+    display: flex;
+    justify-content: space-between;
+    wrap: nowrap;
+}
     </style>
 </head>
 
@@ -97,9 +110,7 @@ $row_power = $stmt8->fetchall();
             <!-- title -->
             <div class="up-table-title row">
                 <div class="item">品項</div>
-                <div class="brand">品牌</div>
                 <div class="productname">商品名稱</div>
-                <div class="itemprice">單價</div>
                 <div class="amount">數量</div>
                 <div class="sub">小計</div>
                 <div class="add"></div>
@@ -107,47 +118,35 @@ $row_power = $stmt8->fetchall();
             <!-- 主題機 -->
             <div class="up-table row">
                 <div class="item">主題機</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                            <option>商品名稱</option>
-                           
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+                
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_computer as $com) { ?>
+                                <li class="option product-option" data-sid="<?= $com['sid'] ?>"><span>
+                                    <?= $com['brand'] ?>
+                                </span>
+                                   <?= $com['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $com['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -183,40 +182,7 @@ $row_power = $stmt8->fetchall();
             </div>
             <!-- CPU -->
             <div class="up-table row">
-                <div class="item">中央處理器</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="amount">
-                            <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select" name="brand" id="brand">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option" value="0">品牌</li>
-                                <li class="option" value="1">AMD</li>
-                                <li class="option" value="2">Intel</li>
-                            </ul>
-                        </div>
-                    <!-- <div class="select" name="brand" id="brand">
-                        <span class="value"></span>
-                        <ul class="optList hidden">
-                            <li class="option" value="0">品牌</li>
-                            <?php foreach ($row_cpu as $key => $value) {
-                                foreach ($value as $key2 => $value2) {
-                            ?>
-                            <li class="option">
-                                <?= $value2 ?>
-                            </li>
-                            <?php } ?>
-                            <?php } ?>
-                        </ul>
-                    </div> -->
-                </form>
-            </div>
+                <div class="item">中央處理器 CPU</div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
@@ -229,17 +195,21 @@ $row_power = $stmt8->fetchall();
 
                         <div class="select" name="productname" id="productname">
                             <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option" value="0">商品名稱</li>
-                                <li class="option" value="1">AMD</li>
-                                <li class="option" value="2">Intel</li>
-                                <li class="option" value="3">pro4</li>
-                                <li class="option" value="4">pro5</li>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_cpu as $cpu) { ?>
+                                <li class="option product-option" data-sid="<?= $cpu['sid'] ?>"><span>
+                                    <?= $cpu['brand'] ?>
+                                </span>
+                                   <?= $cpu['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $cpu['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
-                    </div>
+                        </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -272,49 +242,32 @@ $row_power = $stmt8->fetchall();
             <!-- 主機板 MB -->
             <div class="up-table row">
                 <div class="item">主機板 MB</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>品牌</option>
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_mb as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-
-                                <?php }
-                                } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
+                            <!-- <option>pro2</option>
+                            <option>pro3</option>
+                            <option>pro4</option>
+                            <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">商品名稱</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <?php foreach ($row_mb2 as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-
-                                <?php }
-                                } ?>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_mb as $mb) { ?>
+                                <li class="option product-option" data-sid="<?= $mb['sid'] ?>"><span>
+                                    <?= $mb['brand'] ?>
+                                </span>
+                                   <?= $mb['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $mb['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
-                </div>
-                <div class="itemprice">
-                    
                 </div>
                 <div class="amount">
                     <form class="widget amount">
@@ -348,52 +301,33 @@ $row_power = $stmt8->fetchall();
             <!-- 顯示卡 VGA -->
             <div class="up-table row">
                 <div class="item">顯示卡 VGA</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_vga as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_vga as $vga) { ?>
+                                <li class="option product-option" data-sid="<?= $vga['sid'] ?>"><span>
+                                    <?= $vga['brand'] ?>
+                                </span>
+                                   <?= $vga['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $vga['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -426,48 +360,33 @@ $row_power = $stmt8->fetchall();
             <!-- 記憶體 RAM -->
             <div class="up-table row">
                 <div class="item">記憶體 RAM</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_ram as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_ram as $ram) { ?>
+                                <li class="option product-option" data-sid="<?= $ram['sid'] ?>"><span>
+                                    <?= $ram['brand'] ?>
+                                </span>
+                                   <?= $ram['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $ram['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -500,48 +419,33 @@ $row_power = $stmt8->fetchall();
             <!-- 傳統硬碟 HDD -->
             <div class="up-table row">
                 <div class="item">傳統硬碟 HDD</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_hdd as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_hdd as $hdd) { ?>
+                                <li class="option product-option" data-sid="<?= $hdd['sid'] ?>"><span>
+                                    <?= $hdd['brand'] ?>
+                                </span>
+                                   <?= $hdd['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $hdd['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -574,48 +478,33 @@ $row_power = $stmt8->fetchall();
             <!-- 固態硬碟 SSD -->
             <div class="up-table row">
                 <div class="item">固態硬碟 SSD</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_ssd as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_ssd as $ssd) { ?>
+                                <li class="option product-option" data-sid="<?= $ssd['sid'] ?>"><span>
+                                    <?= $ssd['brand'] ?>
+                                </span>
+                                   <?= $ssd['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $ssd['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -648,52 +537,34 @@ $row_power = $stmt8->fetchall();
             <!-- 電腦機殼 CASE -->
             <div class="up-table row">
                 <div class="item">電腦機殼 CASE</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_case as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_case as $case) { ?>
+                                <li class="option product-option" data-sid="<?= $case['sid'] ?>"><span>
+                                    <?= $case['brand'] ?>
+                                </span>
+                                   <?= $case['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $case['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -725,53 +596,35 @@ $row_power = $stmt8->fetchall();
             </div>
             <!-- 電源供應器 powersupply-->
             <div class="up-table row">
-                <div class="item">電源供應器</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <?php foreach ($row_power as $key => $value) {
-                                    foreach ($value as $key2 => $value2) {
-                                ?>
-                                        <li class="option"><?= $value2 ?></li>
-                                    <?php } ?>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+                <div class="item">電源供應器 POWER</div>
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_power as $power) { ?>
+                                <li class="option product-option" data-sid="<?= $power['sid'] ?>"><span>
+                                    <?= $power['brand'] ?>
+                                </span>
+                                   <?= $power['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $power['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -802,133 +655,41 @@ $row_power = $stmt8->fetchall();
                 </div>
             </div>
             
-            <!-- 鍵盤 / 滑鼠 -->
-            <div class="up-table row">
-                <div class="item">鍵盤 / 滑鼠</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
-                    <form class="widget productname">
-                        <select name="productname">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="itemprice">$0</div>
-                <div class="amount">
-                    <form class="widget amount">
-                        <select name="amount">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">0</li>
-                                <li class="option">1</li>
-                                <li class="option">2</li>
-                                <li class="option">3</li>
-                                <li class="option">4</li>
-                                <li class="option">5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="sub price">$0</div>
-                <div class="add">
-                    <span>
-                        <i class="fas fa-plus-circle "></i>
-                    </span>
-                </div>
-            </div>
             <!-- subtitle -->
             <div class="up-table-subtitle row">
                 <div class="col-12 item">散熱模組</div>
             </div>
-            <!-- 散熱器 -->
+            <!-- 散熱器 radiator-->
             <div class="up-table row">
-                <div class="item">散熱器</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+                <div class="item">散熱器 RADIATOR</div>
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_radiator as $radiator) { ?>
+                                <li class="option product-option" data-sid="<?= $radiator['sid'] ?>"><span>
+                                    <?= $radiator['brand'] ?>
+                                </span>
+                                   <?= $radiator['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $radiator['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -958,53 +719,37 @@ $row_power = $stmt8->fetchall();
                     </span>
                 </div>
             </div>
-            <!-- 散熱膏 -->
+            <!-- 散熱膏 thermalgrease-->
             <div class="up-table row">
-                <div class="item">散熱膏</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+                <div class="item">散熱膏 THERMAL GREASE</div>
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_thermalgrease as $grease) { ?>
+                                <li class="option product-option" data-sid="<?= $grease['sid'] ?>"><span>
+                                    <?= $grease['brand'] ?>
+                                </span>
+                                   <?= $grease['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $grease['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1034,53 +779,38 @@ $row_power = $stmt8->fetchall();
                     </span>
                 </div>
             </div>
-            <!-- 水冷 -->
+            
+            <!-- 水冷 watercooled-->
             <div class="up-table row">
-                <div class="item">水冷</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+                <div class="item">水冷 WATER COOLING</div>
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_watercooled as $cooled) { ?>
+                                <li class="option product-option" data-sid="<?= $cooled['sid'] ?>"><span>
+                                    <?= $cooled['brand'] ?>
+                                </span>
+                                   <?= $cooled['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $cooled['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1114,53 +844,37 @@ $row_power = $stmt8->fetchall();
             <div class="up-table-subtitle row">
                 <div class="col-12 item">周邊零件</div>
             </div>
-            <!-- 外接硬碟 -->
+            <!-- 外接硬碟 externalharddrive-->
             <div class="up-table row">
                 <div class="item">外接硬碟</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_ram as $ram) { ?>
+                                <li class="option product-option" data-sid="<?= $ram['sid'] ?>"><span>
+                                    <?= $ram['brand'] ?>
+                                </span>
+                                   <?= $ram['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $ram['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1193,50 +907,34 @@ $row_power = $stmt8->fetchall();
             <!-- 隨身碟 USB -->
             <div class="up-table row">
                 <div class="item">隨身碟 USB</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_ram as $ram) { ?>
+                                <li class="option product-option" data-sid="<?= $ram['sid'] ?>"><span>
+                                    <?= $ram['brand'] ?>
+                                </span>
+                                   <?= $ram['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $ram['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1266,53 +964,37 @@ $row_power = $stmt8->fetchall();
                     </span>
                 </div>
             </div>
-            <!-- 記憶卡 -->
+            <!-- 記憶卡 MEMORY CARD-->
             <div class="up-table row">
-                <div class="item">記憶卡</div>
-                <div class="brand">
-                    <form class="widget brand">
-                        <select name="brand">
-                           <option>商品名稱</option>
-                            <!-- <option>pro2</option>
-                            <option>pro3</option>
-                            <option>pro4</option>
-                            <option>pro5</option> -->
-                        </select>
-                        <div class="select">
-                            <span class="value"></span>
-                            <ul class="optList hidden">
-                                <li class="option">品牌</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="productname">
+                <div class="item">記憶卡 MEMORY CARD</div>
+               <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                           <option>商品名稱</option>
+                            <option>商品名稱</option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
                             <option>pro5</option> -->
                         </select>
 
-                        <div class="select">
-                            <span class="value">品牌</span>
-                            <ul class="optList hidden">
-                                <li class="option">商品名稱</li>
-                                <li class="option">pro2</li>
-                                <li class="option">pro3</li>
-                                <li class="option">pro4</li>
-                                <li class="option">pro5</li>
+                        <div class="select" name="productname" id="productname">
+                            <span class="value"></span>
+                            <ul class="optList hidden ">
+                            <li class="option " >商品名稱</li>
+                            <?php foreach ($row_ram as $ram) { ?>
+                                <li class="option product-option" data-sid="<?= $ram['sid'] ?>"><span>
+                                    <?= $ram['brand'] ?>
+                                </span>
+                                   <?= $ram['name'] ?><span class="price">
+                                       <i class="fas fa-dollar-sign"></i><?= $ram['price'] ?>
+                                   </span>
+                                </li>
+                                <?php } ?> 
                             </ul>
                         </div>
                     </form>
                 </div>
-                <div class="itemprice">$0</div>
+                
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
@@ -1342,8 +1024,6 @@ $row_power = $stmt8->fetchall();
                     </span>
                 </div>
             </div>
-
-
 
         </div>
         <!-- 估價單 -->
@@ -1595,15 +1275,6 @@ $row_power = $stmt8->fetchall();
             }
         });
 
-        // function CPU(){
-        // $.ajax({
-        // type: POST;
-        // url: "/Upick/web/upick/cpu-api.php";
-        // dataType: "json";
-        // success:function(data){ },
-        // error: function(data) { }
-        // });
-        // };
 
     </script>
 </body>
