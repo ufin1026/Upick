@@ -521,7 +521,7 @@ console.log(none_selector);
                 $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto"><i class="fas fa-dollar-sign"></i>'+$(wp_price).text()+'</h5></div >'
                 );
                 console.log('換東西',none_selector);
-                totalPrice = totalPrice + val_price;
+                val_price;
                 console.log(totalPrice);
 
             }
@@ -536,6 +536,7 @@ console.log(none_selector);
                 console.log(totalPrice);
                 // totalPrice = totalPrice + val_price;
             }
+
         // console.log('total : ',totalPrice,'+',val_price,'=',totalPrice + val_price);
 
         $("#price").append('<i class="fas fa-dollar-sign"></i>'+totalPrice);
