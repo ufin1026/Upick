@@ -162,7 +162,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value"></span>
                             <ul class="optList hidden">
-                                <li class="option" value="0">0</li>
+
                                 <li class="option" value="1">1</li>
                                 <li class="option" value="2">2</li>
                                 <li class="option" value="3">3</li>
@@ -172,7 +172,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -189,7 +189,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -220,7 +220,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -229,7 +229,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select qty">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -239,7 +239,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add" id="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -252,7 +252,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -279,7 +279,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -288,7 +288,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -298,7 +298,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -311,7 +311,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -338,7 +338,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -347,7 +347,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -357,7 +357,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -370,7 +370,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -397,7 +397,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -406,7 +406,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -416,7 +416,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -429,7 +429,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -456,7 +456,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -465,7 +465,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -475,7 +475,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -488,7 +488,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -515,7 +515,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -524,7 +524,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -534,7 +534,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -547,7 +547,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -575,7 +575,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -584,7 +584,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -594,7 +594,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -607,7 +607,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -635,7 +635,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -644,7 +644,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -654,7 +654,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -672,7 +672,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -700,7 +700,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -709,7 +709,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -719,7 +719,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -732,7 +732,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -760,7 +760,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -769,7 +769,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -779,7 +779,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -793,7 +793,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -821,7 +821,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -830,7 +830,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -840,7 +840,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -857,7 +857,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -885,7 +885,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -894,7 +894,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -904,7 +904,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -917,7 +917,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -945,7 +945,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -954,7 +954,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -964,7 +964,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -977,7 +977,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -1005,7 +1005,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                 <div class="amount">
                     <form class="widget amount">
                         <select name="amount">
-                           <option>商品名稱</option>
+                           <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -1014,7 +1014,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         <div class="select">
                             <span class="value">品牌</span>
                             <ul class="optList hidden">
-                                <li class="option">0</li>
+
                                 <li class="option">1</li>
                                 <li class="option">2</li>
                                 <li class="option">3</li>
@@ -1024,7 +1024,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                         </div>
                     </form>
                 </div>
-                <div class="sub price">$0</div>
+                <div class="sub price"><i class="fas fa-dollar-sign"></i>0</div>
                 <div class="add">
                     <span>
                         <i class="fas fa-plus-circle "></i>
@@ -1192,73 +1192,82 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
             });
         });
 
+        var totalPrice = Number(0);
 
-        $(document).on('click', '.trashcan', function () {
-            console.log('remove')
-            $(this).parent().remove()
-        })
 
         // 清空
         $(document).on('click', '.up-card-clear', function () {
             console.log('clear')
-            $('#upList').children().remove()
+            $('#upList').children().remove();
+            totalPrice = 0
+            $("#price").empty();
+        $("#price").append('<i class="fas fa-dollar-sign"></i>'+totalPrice);
         })
 
-        const row_cpu = <?=json_encode($row_cpu)
-?>;
 
-        function change(event){
-            console.log(event.target.value);
-            changeCate('')
-        }
-
-
-        let districtObj = [
-            ['商品名稱'],
-            ['商品名稱', 'AMD Athlon-3000G 雙核心 中央處理器', 'AMD Ryzen 3-3100 3.6GHz 四核心 中央處理器', 'AMD Ryzen 3 R3-3300X 中央處理器', 'AMD Ryzen 5-3500X 3.6GHz六核心 中央處理器', 'AMD Ryzen 5 R5-3400G 中央處理器'],
-            ['商品名稱', 'Intel Core i3-10100 中央處理器', 'Intel Core i5-11600KF 中央處理器', 'Intel Core i5-11600K 中央處理器','Intel Core i5-10400 中央處理器'],
-        ];
-
-        var selectorVal = '0';  // 初始值
-
-        $('#brand li').click(function () {
-            // $('#brand-select').change
-            console.log('hi', $(this).val());
-
-            if ($(this).val() == selectorVal) {
-
-            }
-            else {
-                let selectedselect = $(this).val();
-                console.log('hello', $(this).val());
-                $('#productname li').each(function () {
-                    $(this).text(districtObj[selectedselect][$(this).val()]);
-                    console.log('each', districtObj[selectedselect][$(this).val()]);
-                })
-            }
-        });
-
+        // 點商品改價錢
         $(document).on('click', '.product-option', function () {
 
-        // $("#upList").empty();
-        // $("#price").empty();
+            // $("#price").empty();
 
-        console.log($($(this).parents().siblings('.sub')[0]).text('123'));
+        const row = $(this).closest('.product-option');
+        const sid = row.attr('data-sid');
+        const name = row.attr('data-name');
+        const price = row.attr('data-price');
+        const qty = 1;
 
-        // console.log(($(this).siblings().find('.sub'));
-        // $(".sub").empty();
-        // $(".sub").append('<i class="fas fa-dollar-sign"></i>'+price);
+        console.log('hi',{sid, qty , name , price }, row.find('.card-title').text() )
+        let up_price = price;
+        console.log(up_price);
+
+        $($(this).parents().siblings('.sub')[0]).empty();
+        $($(this).parents().siblings('.sub')[0]).append('<i class="fas fa-dollar-sign"></i>'+up_price);
 
 })
 
+// 新增商品到清單
+var totalPrice = Number(0);
 $(document).on('click', '.add', function () {
+
+    let wp_price = $(this).prevAll()[0];
+
+        let val_price = Number($(wp_price).text());
+        console.log('totalPrice:',totalPrice);
+        console.log('val_price:',val_price);
+        totalPrice = totalPrice + val_price;
+        console.log(totalPrice);
 
 console.log($(this).siblings()[3].innerText);
 console.log($(this).siblings()[1].innerText);
 let price = $(this).siblings()[3].innerText
 let name = $(this).siblings()[1].innerText
 $("#upList").append('<div class=" list-group-item d-flex"><div class="col-11"><p class="my-auto ">' +name+' </p><div class="d-flex justify-content-between"><span class="price my-auto"><i class="fas fa-dollar-sign"></i>'+price+'</span></div></div><div class="col-1 my-auto trashcan"><i class=" fas fa-trash "></i></div></div></div>');
+$("#price").empty();
+$("#price").append('<i class="fas fa-dollar-sign"></i>'+totalPrice);
+
     })
+
+    // 改總金額
+    $(document).on('click', '.trashcan', function () {
+            console.log('remove')
+            wp_price = $(this).prevAll()[0];
+
+            // console.log($($(wp_price).children()[1]).text());
+
+            this_price = Number($($(wp_price).children()[1]).text())
+            console.log('thisprice:',this_price);
+
+                // this_price = Number(price.text())
+
+                console.log('thistotal',totalPrice);
+                totalPrice = totalPrice - this_price;
+                console.log(totalPrice-this_price);
+            $(this).parent().remove();
+            $("#price").empty();
+                $("#price").append('<i class="fas fa-dollar-sign"></i>'+totalPrice);
+        })
+
+
 
 </script>
 // </body>

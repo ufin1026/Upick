@@ -486,6 +486,7 @@ var none_selector = false;
                     'right': '-=700px'
                 })
 
+                // 刪掉最後一項及扣掉價錢
                 let price = $("#wpList div:last").find('.price');
                 last_price = Number(price.text())
                 console.log('lastprice:',last_price);
