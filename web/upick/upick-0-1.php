@@ -73,7 +73,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
     <link rel="stylesheet" href="/Upick/css/upick-phone.css" type="text/css"
         media="only screen and (min-width: 0px) and (max-width: 767px)" />
     <style>
- .up-footer {
+    .up-footer {
             width: 100%;
             height: 80px;
             background-color: #383E44;
@@ -82,19 +82,19 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
             z-index: 5;
         }
 
-        .select .option {
+    .select .option {
     padding: 5px 10px;
-}
+        }
 
-.select .optList{
+    .select .optList{
     max-height: 300px;
-}
+        }
 
-.product-option {
+    .product-option {
     display: flex;
     justify-content: space-between;
     wrap: nowrap;
-}
+        }
     </style>
 </head>
 
@@ -121,7 +121,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
                <div class="productname">
                     <form class="widget productname">
                         <select name="productname">
-                            <option>商品名稱</option>
+                            <option></option>
                             <!-- <option>pro2</option>
                             <option>pro3</option>
                             <option>pro4</option>
@@ -1046,7 +1046,7 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
             <div class="totalPrice d-flex justify-content-center">
                 <h5>
                     總價
-                    <span class="price">
+                    <span class="price" id="price" >
                     <i class="fas fa-dollar-sign"></i>
                                 0
                     </span>
@@ -1241,35 +1241,24 @@ $row_watercooled = $pdo->query($watercooled1)->fetchall();
         $(document).on('click', '.product-option', function () {
 
         // $("#upList").empty();
-        $("#price").empty();
+        // $("#price").empty();
 
-        const row = $(this).closest('.product-option');
-        const sid = row.attr('data-sid');
-        const name = row.attr('data-name');
-        const price = row.attr('data-price');
-        const qty = 1;
+        console.log($($(this).parents().siblings('.sub')[0]).text('123'));
 
-        // console.log('hi',{sid, qty , name , price }, row.find('.card-title').text() )
-        let up_price = price;
-        console.log(up_price);
-        console.log($(up_price));
-
-        // subprice = (".product-option.siblings.sub")
-        $(".sub").empty();
-        $(".sub").append('<i class="fas fa-dollar-sign"></i>'+price);
-
-$(document).on('click', '.add', function () {
-
-$("#upList").append('<div class=" list-group-item d-flex"><div class="col-11"><p class="my-auto ">' +name+' </p><div class="d-flex justify-content-between"><form class="widget amount"><select name="amount"><option>數量</option><option>pro2</option><option>pro3</option><option>pro4</option><option>pro5</option></select><div class="select"><span class="value"></span><ul class="optList hidden"><li class="option">0</li><li class="option">1</li><li class="option">2</li><li class="option">3</li><li class="option">4</li><li class="option">5</li></ul></div></form><span class="price my-auto"><i class="fas fa-dollar-sign"></i>'+price+'</span></div></div><div class="col-1 my-auto trashcan"><i class=" fas fa-trash "></i></div></div></div>');
-    })
-
-.
-
-$(".sub").append('<i class="fas fa-dollar-sign"></i>'+price);
+        // console.log(($(this).siblings().find('.sub'));
+        // $(".sub").empty();
+        // $(".sub").append('<i class="fas fa-dollar-sign"></i>'+price);
 
 })
 
+$(document).on('click', '.add', function () {
 
+console.log($(this).siblings()[3].innerText);
+console.log($(this).siblings()[1].innerText);
+let price = $(this).siblings()[3].innerText
+let name = $(this).siblings()[1].innerText
+$("#upList").append('<div class=" list-group-item d-flex"><div class="col-11"><p class="my-auto ">' +name+' </p><div class="d-flex justify-content-between"><span class="price my-auto"><i class="fas fa-dollar-sign"></i>'+price+'</span></div></div><div class="col-1 my-auto trashcan"><i class=" fas fa-trash "></i></div></div></div>');
+    })
 
 </script>
 // </body>

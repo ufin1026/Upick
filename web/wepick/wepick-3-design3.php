@@ -485,6 +485,15 @@ var none_selector = false;
                 $('.wp-slide').css({
                     'right': '-=700px'
                 })
+
+                let price = $("#wpList div:last").find('.price');
+                last_price = Number(price.text())
+                console.log('lastprice:',last_price);
+                console.log('lasttotal',totalPrice);totalPrice = totalPrice - last_price;
+                console.log(totalPrice-last_price);
+                 $("#wpList div:last").remove();
+                $("#price").empty();
+                $("#price").append('<i class="fas fa-dollar-sign"></i>'+totalPrice);
             }
             else false;
         })
@@ -514,16 +523,20 @@ console.log(none_selector);
             let wp_name = $(this).prevAll()[1];
         //     // console.log($(wp_name).contents()[1].innerText);
         //     var totalPrice = Number(0);
-        //     let val_price = Number($(wp_price).text());
+            // let val_price = Number($(wp_price).text());
         //     console.log('val : '+val_price);
             if (none_selector){
+
+                let price = $("#wpList div:last").find('.price');
+                // console.log('hello',Number(price.text()));
+                last_price = Number(price.text())
                 $("#wpList div:last").remove();
+
                 $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price col-3 my-auto"><i class="fas fa-dollar-sign"></i>'+$(wp_price).text()+'</h5></div >'
                 );
                 console.log('換東西',none_selector);
-                val_price;
+                totalPrice = totalPrice - last_price + val_price;
                 console.log(totalPrice);
-
             }
             else{
             // 選擇之後變為TRUE
