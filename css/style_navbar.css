@@ -1,4 +1,4 @@
-    .navbarAll {
+.navbarAll {
     position: fixed;
     z-index: 999;
 
@@ -66,15 +66,24 @@
         transition: .5s;
     }
 
+    .form-inline>.navbar-nav>a{
+        color: #FFF;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .form-inline>.navbar-nav>a:hover{
+        background-color: #7FE0DC;
+        color: #383E44;
+        text-decoration: none;
+    }
+
     /* 彩虹條 */
     .colorspace {
         height: 8px;
         width: 100vw;
         background: linear-gradient(to right, #7FE0DC 1%, #FF8888 50%, #7FE0DC 99%);        
     }
-
-
-
 
     /*navbar下白色搜尋區*/
     .navSearch-CL {
@@ -84,7 +93,6 @@
         box-sizing: border-box;
         padding-top: 10px;
         border-bottom: 1px solid #b9b9b9;
-
         transform: translateY(-30vh);
         opacity: 0;
     }
@@ -92,6 +100,11 @@
     /*將搜尋輸入框置中*/
     .wSearchInput {
         margin: 0 auto;
+    }
+
+    /*分類搜尋按鈕*/
+    .wSearcBtn:hover {
+        background-color: #6d747c;
     }
 
     /*修改搜尋分類區的寬度置中*/
@@ -128,14 +141,27 @@
     .navSearchColor-CL {
         width: 0%;
         height: 30px;
-        background-color: #7FE0DC;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         opacity: 0.2;
         transition: 1s;
         transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
 
+    /*分類按鈕被選擇時顏色*/
+    .navBtnBg01cpu-CL, .navBtnBg02mb-CL, .navBtnBg04ram-CL, .navBtnBg05hdd-CL, .navBtnBg06ssd-CL, .navBtnBg03vga-CL, .navBtnBg07computercase-CL, .navBtnBg08powersupply-CL, .navBtnBg12fan-CL, .navBtnBg09screen-CL {
+        background-color: #7FE0DC;
     }
 
 
+    /*手機版*/
+    @media (max-width:419px) and (min-width: 300px) {
+        .navbarAll {
+            display: none;
+        }
+
+        .navSearch-CL {
+            display: none;
+        }
+    }

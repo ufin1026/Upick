@@ -207,3 +207,11 @@
 .up-productlist {
     margin: auto;
 }
+
+.up-productlist-product{
+    display: none;
+}
+
+.web-price{
+    display: none;
+}

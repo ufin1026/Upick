@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!--檔頭外掛-->
-    <?php include __DIR__ . '/../../parts/html_head.php' ?>
+    <?php include __DIR__ . '/../../parts/html_head.php'?>
 
     <!-- google font 'Freckle Face', cursive-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,6 +15,8 @@
 
     <!-- wp-1.css -->
     <link rel="stylesheet" href="/Upick/css/wp-1.css">
+    <link rel="stylesheet" href="/Upick/css/wp-1-phone.css" type="text/css"
+        media="only screen and (min-width: 0px) and (max-width: 767px)" />
     <!-- style -->
     <style>
     .wp-button:hover {
@@ -24,7 +26,7 @@
 </head>
 
 <body>
-    <?php include __DIR__ . '/../../parts/html_navbar.php' ?>
+    <?php include __DIR__ . '/../../parts/html_navbar.php'?>
     <div class="wpNavSpace-CL"></div>
 
     <div class="row col-sm-12 justify-content-center mx-auto container">
@@ -44,12 +46,10 @@
                 遊戲電競
             </h2>
             <div class="mx-auto wp-gaming wp-button-group">
-                <a href="/Upick/web/wepick/wepick-2-gaming.php">
-                    <button class="wp-button wp-gaming-button wp-gaming">一鍵組機</button>
-                </a>
-                <a href="/Upick/web/wepick/wepick-3-gaming.php">
-                    <button class="wp-button wp-gaming-button wp-gaming">自選零件</button>
-                </a>
+                <a href="/Upick/web/wepick/wepick-2-gaming.php?classid=19gaming_com">
+                    <button class="wp-button wp-gaming wp-gaming-button">一鍵組機</button></a>
+                <a href="/Upick/web/wepick/wepick-3-gaming.php?classid=01cpu">
+                    <button class="wp-button wp-gaming wp-gaming-button wp-button-dn">自選零件</button></a>
             </div>
         </div>
 
@@ -57,7 +57,7 @@
 
 
     <!--SCRIPT-->
-    <?php include __DIR__ . '/../../parts/scripts.php' ?>
+    <?php include __DIR__ . '/../../parts/scripts.php'?>
 </body>
 
 </html>

@@ -7,12 +7,12 @@ session_start();
 $tableid = isset($_GET['classid']) ? ($_GET['classid']) : "";
 
 if ($tableid == '18drawing_com' or '19gaming_com') {
-    $between1 = 1;
-    $between2 = 5;
+ $between1 = 1;
+ $between2 = 10;
 }
 if ($tableid != ('18drawing_com' or '19gaming_com')) {
-    $between1 = "";
-    $between2 = "";
+ $between1 = "";
+ $between2 = "";
 }
 $game = "SELECT * FROM $tableid WHERE id BETWEEN $between1 AND $between2";
 $game1 = $pdo->query($game)->fetchAll();
@@ -28,7 +28,7 @@ $game1 = $pdo->query($game)->fetchAll();
     <title>wepickCPU</title>
 
     <!--檔頭外掛-->
-    <?php include __DIR__ . '/../../parts/html_head.php' ?>
+    <?php include __DIR__ . '/../../parts/html_head.php'?>
 
     <!-- wp-2.css -->
     <link rel="stylesheet" href="/Upick/css/wp-2.css">
@@ -167,11 +167,26 @@ width: 200px;
     background-color: #47D5CE60;
     color: #fafafa;
 }
+
+.wp-contain{
+    word-break: break-all;
+    height: 120px;
+    padding: 3px;
+    margin-bottom: 0px;
+}
+
+.wp-name{
+    word-break: break-all;
+}
+
+.wp-price{
+    padding-right: 0;
+}
     </style>
 </head>
 
 <body>
-    <?php include __DIR__ . '/../../parts/html_navbar.php' ?>
+    <?php include __DIR__ . '/../../parts/html_navbar.php'?>
     <div class="wpNavSpace-CL"></div>
 
     <div class="container">
@@ -189,22 +204,22 @@ width: 200px;
                 </div>
                 <div class="wp-slide">
                     <div class="list-unstyled d-flex wp-wrap ">
-                        <?php foreach ($game1 as $r) { ?>
+                        <?php foreach ($game1 as $g) {?>
                         <div class="col-lg-4 col-sm-12">
-                            <div class="wp-row">
-                                <img src="<?= WEB_ROOT ?>/images/product/<?= $tableid ?>/<?= $r['imgs'] ?>.jpg" alt="">
-                                <h5 class="wp-2-producttitle"><?= $r['brand'] ?></h5>
+                            <div class="wp-row" data-sid="<?=$g['sid']?>">
+                                <img src="<?=WEB_ROOT?>/images/product/<?=$tableid?>/<?=$g['imgs']?>.jpg" alt="">
+                                <h5 class="wp-2-producttitle"><?=$g['brand']?></h5>
                                 <div class="product-info">
-                                    <p>
-                                    <?= $r['name'] ?>
+                                    <p class="wp-contain">
+                                    <?=$g['name']?>
                                     </p>
                                 </div>
 
-                                <h5 class="price">$<?= $r['price'] ?></h5>
+                                <h5 class="price"><i class="fas fa-dollar-sign"></i><?=$g['price']?></h5>
                                 <button id="wp-btn-product" class="btn wp-btn-product wBtnNormalDark">選擇</button>
                             </div>
                             </div>
-                    <?php } ?>  
+                    <?php }?>
                     </div>
                 </div>
             </div>
@@ -216,10 +231,10 @@ width: 200px;
 
                     </ul>
                     <div class="totalPrice">
-                        <h5>
+                    <h5>
                             總價
-                            <span class="price">
-                                $3000
+                            <span class="price" id="price"><i class="fas fa-dollar-sign"></i>
+                                0
                             </span>
                         </h5>
                     </div>
@@ -235,35 +250,51 @@ width: 200px;
 
 
     <!--SCRIPT-->
-    <?php include __DIR__ . '/../../parts/scripts.php' ?>
+    <?php include __DIR__ . '/../../parts/scripts.php'?>
 
     <script>
      // 選擇後新增li
      $(document).on('click', '#wp-btn-product', function () {
-            console.log('hi')
-            $("#wpList").append('<div class="list-group-item d-flex"><p class= "col-9 my-auto" > HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2 / 16 </p><h5 class="price col-3 my-auto">$1000</h5></div >');
-        })
 
-        let newsPage = 0;
+$("#wpList").empty();
+$("#price").empty();
 
-        $('.wp-arrow .left-arrow').click(function () {
-            console.log('hi')
-            newsPage--;
-            if (newsPage < 0) {
-                newsPage = 2;
-            };
-            $('.wp-wrap').css('left', -235 * newsPage + 'px');
-        })
-        $('.wp-arrow .right-arrow').click(function () {
-            console.log('hi')
-            newsPage++;
-            if (newsPage > 2) {
-                newsPage = 0;
-            };
-            $('.wp-wrap').css('left', -235 * newsPage + 'px');
-        })
+const row = $(this).closest('.wp-row');
+const sid = row.attr('data-sid');
+const qty = 1;
 
-        $('.wp-row').odd().addClass('wp-row-p')
+    console.log('hi',{sid, qty }, row.find('.card-title').text() )
+    let wp_price = $(this).prevAll()[0];
+    console.log($(wp_price).text());
+    let wp_name = $(this).prevAll()[1];
+    console.log($(wp_name).contents()[1].innerText);
+
+    $("#wpList").append('<div class="list-group-item d-flex"><p class= "wp-name col-9 my-auto" >'+$(wp_name).contents()[1].innerText+'</p><h5 class="price wp-price col-3 my-auto"><i class="fas fa-dollar-sign "></i>'+$(wp_price).text()+'</h5></div >');
+
+$("#price").append('<i class="fas fa-dollar-sign"></i>'+$(wp_price).text());
+
+})
+
+let newsPage = 0;
+
+$('.wp-arrow .left-arrow').click(function () {
+    console.log('hi')
+    newsPage--;
+    if (newsPage < 0) {
+        newsPage = 6;
+    };
+    $('.wp-wrap').css('left', -235 * newsPage + 'px');
+})
+$('.wp-arrow .right-arrow').click(function () {
+    console.log('hi')
+    newsPage++;
+    if (newsPage > 6) {
+        newsPage = 0;
+    };
+    $('.wp-wrap').css('left', -235 * newsPage + 'px');
+})
+
+$('.wp-row').odd().addClass('wp-row-p')
     </script>
 </body>
 

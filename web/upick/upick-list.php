@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!--檔頭外掛-->
-    <?php include __DIR__ . '/../../parts/html_head.php' ?>
+    <?php include __DIR__ . '/../../parts/html_head.php'?>
 
     <!-- up style -->
     <link rel="stylesheet" href="/Upick/css/up-color.css">
@@ -35,7 +35,7 @@
 
 <body  style="background-color:#383E44">
    <!-- last step -->
-   <div class="up-back d-lg-none">
+   <div class="up-back ">
         <a class="wWhitePgLink" href="/Upick/web/upick/upick-0.php"><i class="fas fa-angle-left"></i></a>
     </div>
    <!-- 分享頁面 -->
@@ -61,34 +61,34 @@
     <div>
         <div class="container up-container">
             <!-- 商品清單 -->
-            <div class="up-productlist">
+            <div class="up-productlist ">
                 <h5 class="up-productlist-title">商品清單</h5>
-                <div class="up-productlist-product">
-                    <p class="my-auto"> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                    <h5 class="price my-auto">$1000</h5>
+                <div class="up-productlist-product ">
+                    <p class="my-auto"> AMD AMD Ryzen 5-3500X 3.6GHz六核心 中央處理器 </p>
+                    <h5 class="price my-auto"><i class="fas fa-dollar-sign"></i>4670</h5>
                 </div>
-                <div class="up-productlist-product">
-                    <p class="my-auto"> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                    <h5 class="price my-auto">$1000</h5>
+                <div class="up-productlist-product ">
+                    <p class="my-auto"> ASUS華碩 GT710-4H-SL-2GD5 顯示卡 </p>
+                    <h5 class="price my-auto"><i class="fas fa-dollar-sign"></i>2390</h5>
                 </div>
-                <div class="up-productlist-product">
-                    <p class="my-auto"> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                    <h5 class="price my-auto">$1000</h5>
+                <div class="up-productlist-product ">
+                    <p class="my-auto"> Seagate希捷 新梭魚 8TB 3.5吋 SATAIII 5400轉 HDD桌上型硬碟  </p>
+                    <h5 class="price my-auto"><i class="fas fa-dollar-sign"></i>5550</h5>
                 </div>
-                <div class="up-productlist-product">
-                    <p class="my-auto"> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                    <h5 class="price my-auto">$1000</h5>
+                <div class="up-productlist-product ">
+                    <p class="my-auto"> ANACOMDA巨蟒 巨蟒 ANACOMDA DDR4 3200 8GB 桌上型記憶體 </p>
+                    <h5 class="price my-auto"><i class="fas fa-dollar-sign"></i>1499</h5>
                 </div>
-                <div class="up-productlist-product">
-                    <p class="my-auto"> HyperX FURY DDR4 3200 8G x2 桌上型超頻記憶體 HX432C16FB3K2/16</p>
-                    <h5 class="price my-auto">$1000</h5>
-                </div>
+
                 <div class="d-flex justify-content-center">
                     <h4 class="m-1 up-productlist-totleprice">
                         總價
                     </h4>
-                    <h4 class="price m-1">
-                        $3000
+                    <h4 class="price m-1 web-price">
+                    <i class="fas fa-dollar-sign"></i>14109
+                    </h4>
+                    <h4 class="price m-1 d-lg-none">
+                    <i class="fas fa-dollar-sign"></i>0
                     </h4>
                 </div>
                 <!-- 按鍵 -->
@@ -107,7 +107,7 @@
 
 
     <!--SCRIPT-->
-    <?php include __DIR__ . '/../../parts/scripts.php' ?>
+    <?php include __DIR__ . '/../../parts/scripts.php'?>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
@@ -128,7 +128,7 @@
                 $('.up-container').parent().removeClass('cover');
             });
         });
-      
+
     </script>
 </body>
 

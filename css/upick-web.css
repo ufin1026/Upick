@@ -255,3 +255,12 @@
 .fa-copy {
     color: #383E44;
 }
+
+.up-img {
+    height: 70%;
+    transform: rotate(20deg);
+    position: absolute;
+    opacity: 10%;
+    top:20%;
+    right: 5%;
+}

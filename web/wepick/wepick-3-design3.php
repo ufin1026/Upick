@@ -61,6 +61,8 @@ $d_add1 = $pdo->query($d_add)->fetchAll();
 
     <!-- wp-2.css -->
     <link rel="stylesheet" href="/Upick/css/wp-3-web.css">
+    <link rel="stylesheet" href="/Upick/css/wp-3-phone.css" type="text/css"
+        media="only screen and (min-width: 0px) and (max-width: 767px)" />
     <link rel="stylesheet" href="/Upick/css/up-color.css">
     <!-- style -->
     <style>
@@ -206,7 +208,7 @@ padding-right: 0;
                 <!-- CPU -->
                 <div class="col-lg-12 wp-slide cpu">
                 <?php foreach ($d_cpu1 as $cpu) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$cpu['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$cpuid?>/<?=$cpu['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$cpu['brand']?></h5>
@@ -224,7 +226,7 @@ padding-right: 0;
                 <!-- MB -->
                 <div class="col-lg-12 wp-slide mb">
                 <?php foreach ($d_mb1 as $mb) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$mb['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$mbid?>/<?=$mb['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$mb['brand']?></h5>
@@ -240,9 +242,9 @@ padding-right: 0;
                     <?php }?>
                 </div>
                 <!-- RAM -->
-                <div class="col-lg-12 wp-slide ram">
+                <div class="col-lg-12 col-sm-6 wp-slide ram">
                 <?php foreach ($d_ram1 as $ram) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$ram['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$ramid?>/<?=$ram['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$ram['brand']?></h5>
@@ -260,7 +262,7 @@ padding-right: 0;
                 <!-- HDD -->
                 <div class="col-lg-12 wp-slide hdd">
                 <?php foreach ($d_hdd1 as $hdd) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$hdd['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$hddid?>/<?=$hdd['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$hdd['brand']?></h5>
@@ -278,7 +280,7 @@ padding-right: 0;
                 <!-- SSD -->
                 <div class="col-lg-12 wp-slide ssd">
                 <?php foreach ($d_ssd1 as $ssd) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$ssd['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$ssdid?>/<?=$ssd['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$ssd['brand']?></h5>
@@ -296,7 +298,7 @@ padding-right: 0;
                 <!-- VGA -->
                 <div class="col-lg-12 wp-slide vga">
                 <?php foreach ($d_vga1 as $vga) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$vga['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$vgaid?>/<?=$vga['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$vga['brand']?></h5>
@@ -314,7 +316,7 @@ padding-right: 0;
                 <!-- CASE -->
                 <div class="col-lg-12 wp-slide case">
                 <?php foreach ($d_case1 as $case) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$case['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$caseid?>/<?=$case['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$case['brand']?></h5>
@@ -332,7 +334,7 @@ padding-right: 0;
                 <!-- POWER -->
                 <div class="col-lg-12 wp-slide power">
                 <?php foreach ($d_power1 as $power) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$power['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$powerid?>/<?=$power['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$power['brand']?></h5>
@@ -350,7 +352,7 @@ padding-right: 0;
                 <!-- RADITOR -->
                 <div class="col-lg-12 wp-slide radiator">
                 <?php foreach ($d_radiator1 as $radiator) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$radiator['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$radiatorid?>/<?=$radiator['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$radiator['brand']?></h5>
@@ -368,7 +370,7 @@ padding-right: 0;
                 <!-- ADD -->
                 <div class="col-lg-12 wp-slide add">
                 <?php foreach ($d_add1 as $add) {?>
-                    <div class="col-lg-4 col-sm-12 ">
+                    <div class="col-lg-4 col-sm-6 ">
                     <div class="wp-row" data-sid="<?=$add['sid']?>">
                         <img src="<?=WEB_ROOT?>/images/product/<?=$addid?>/<?=$add['imgs']?>.jpg" alt="">
                         <h5 class="wp-2-producttitle"><?=$add['brand']?></h5>
@@ -385,7 +387,7 @@ padding-right: 0;
                 </div>
             </div>
             <!-- 估價單 -->
-            <div class="col-lg-4 col-sm-12 wp-card ">
+            <div class="col-lg-4 col-sm-6 wp-card ">
                 <div class="wp-card-contain">
                     <h5>商品清單</h5>
                     <ul id="wpList" class="list-group ">
